@@ -8,6 +8,7 @@ import JSZip from 'jszip';
 export class BrowserFileHandler {
     constructor() {
         this.filesMap = new Map();
+        this.styleName = null;
     }
 
     /**
@@ -39,6 +40,13 @@ export class BrowserFileHandler {
             });
         }
 
+        // Extract style name from first file path
+        if (this.filesMap.size > 0) {
+            const firstPath = this.filesMap.keys().next().value;
+            const parts = firstPath.split('/');
+            this.styleName = parts[0] || 'converted-style';
+        }
+
         return this.filesMap;
     }
 
@@ -50,13 +58,12 @@ export class BrowserFileHandler {
     async readZipFile(zipFile) {
         this.filesMap.clear();
 
+        // Extract style name from ZIP filename (remove .zip extension)
+        this.styleName = zipFile.name.replace(/\.zip$/i, '');
+
         try {
             // Load ZIP file
             const zip = await JSZip.loadAsync(zipFile);
-
-            // Get the base folder name (first directory in ZIP)
-            const firstFile = Object.keys(zip.files)[0];
-            const baseFolderName = firstFile.split('/')[0];
 
             // Process each file in the ZIP
             for (const [relativePath, zipEntry] of Object.entries(zip.files)) {
@@ -143,18 +150,11 @@ export class BrowserFileHandler {
     }
 
     /**
-     * Get the base directory name from the file paths
+     * Get the style name
+     * @returns {string} The style name extracted from ZIP filename or directory
      */
     getStyleName() {
-        if (this.filesMap.size === 0) {
-            return 'converted-style';
-        }
-
-        // Get first file path and extract base directory
-        const firstPath = this.filesMap.keys().next().value;
-        const parts = firstPath.split('/');
-
-        return parts[0] || 'converted-style';
+        return this.styleName || 'converted-style';
     }
 
     /**
