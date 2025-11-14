@@ -39,6 +39,12 @@ console.log(chalk.bold.cyan('\n╔═══════════════�
 console.log(chalk.bold.cyan('║   eXeLearning Style Converter v2.9 → v3.0                 ║'));
 console.log(chalk.bold.cyan('╚════════════════════════════════════════════════════════════╝\n'));
 
+// Experimental warning
+console.log(chalk.yellow('⚠️  EXPERIMENTAL TOOL'));
+console.log(chalk.yellow('    This is an experimental converter. The converted styles may'));
+console.log(chalk.yellow('    not work perfectly and will likely require manual adjustments.'));
+console.log(chalk.yellow('    However, it provides a good starting point for migration.\n'));
+
 async function main() {
     try {
         // Validate options
