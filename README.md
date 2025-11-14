@@ -8,7 +8,7 @@ Automated tool to convert eXeLearning styles from version 2.9 to version 3.0.
 
 No installation needed! Simply:
 1. Open the web interface in your browser
-2. Upload your v2.9 style folder
+2. Upload your v2.9 style (folder or ZIP file)
 3. Click "Convert"
 4. Download the ZIP file
 5. Import into eXeLearning 3.0
@@ -60,8 +60,9 @@ The easiest way to use the converter is through the web interface:
 1. **Visit the online tool** (after deployment):
    [https://your-username.github.io/exelearning-style-converter/](https://your-username.github.io/exelearning-style-converter/)
 
-2. **Upload your v2.9 style folder**
-   Click "Select style folder" and choose your old style directory
+2. **Upload your v2.9 style**
+   - **Option 1 (Folder):** Click the "Folder" tab and select your old style directory
+   - **Option 2 (ZIP):** Click the "ZIP File" tab and select a ZIP file containing your style
 
 3. **Convert**
    Click the "Convert Style" button and watch the progress

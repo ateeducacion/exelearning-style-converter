@@ -22,9 +22,14 @@ class App {
     }
 
     setupEventListeners() {
-        // File input
+        // Folder input
         document.getElementById('dirInput').addEventListener('change', (e) => {
-            this.handleFileUpload(e.target.files);
+            this.handleFileUpload(e.target.files, 'folder');
+        });
+
+        // ZIP file input
+        document.getElementById('zipInput').addEventListener('change', (e) => {
+            this.handleFileUpload(e.target.files, 'zip');
         });
 
         // Convert button
@@ -35,28 +40,37 @@ class App {
 
     showWelcomeMessage() {
         this.console.info('Welcome to eXeLearning Style Converter v2.9 → v3.0');
-        this.console.info('Please upload your old style folder to begin...');
+        this.console.info('Please upload your old style folder or ZIP file to begin...');
         this.console.separator();
     }
 
-    async handleFileUpload(files) {
+    async handleFileUpload(files, type) {
         if (!files || files.length === 0) {
             return;
         }
 
         try {
             this.console.clear();
-            this.console.info(`Reading ${files.length} files...`);
 
-            // Read files
-            this.filesMap = await this.fileHandler.readDirectory(files);
+            if (type === 'zip') {
+                this.console.info(`Reading ZIP file: ${files[0].name}`);
+
+                // Read ZIP file
+                this.filesMap = await this.fileHandler.readZipFile(files[0]);
+            } else {
+                this.console.info(`Reading ${files.length} files from folder...`);
+
+                // Read directory
+                this.filesMap = await this.fileHandler.readDirectory(files);
+            }
 
             const styleName = this.fileHandler.getStyleName();
 
             this.console.success(`Loaded ${this.filesMap.size} files from "${styleName}"`);
 
             // Show file info
-            document.getElementById('fileCount').textContent = `${this.filesMap.size} files uploaded`;
+            const sourceType = type === 'zip' ? 'ZIP file' : 'folder';
+            document.getElementById('fileCount').textContent = `${this.filesMap.size} files loaded from ${sourceType}`;
             document.getElementById('styleName').textContent = `Style: ${styleName}`;
             document.getElementById('fileInfo').classList.remove('d-none');
 
