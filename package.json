@@ -10,8 +10,8 @@
   "scripts": {
     "start": "node cli.js",
     "test": "node cli.js --input styles-old/garden --dry-run",
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "node build-templates.js && vite",
+    "build": "node build-templates.js && vite build",
     "preview": "vite preview"
   },
   "keywords": [

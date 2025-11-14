@@ -2,8 +2,20 @@
 
 Automated tool to convert eXeLearning styles from version 2.9 to version 3.0.
 
+## 🌐 Web Interface (Recommended)
+
+**Use the online converter:** [https://your-username.github.io/exelearning-style-converter/](https://your-username.github.io/exelearning-style-converter/)
+
+No installation needed! Simply:
+1. Open the web interface in your browser
+2. Upload your v2.9 style folder
+3. Click "Convert"
+4. Download the ZIP file
+5. Import into eXeLearning 3.0
+
 ## Features
 
+✅ **Web & CLI Interfaces** - Use in browser or command line
 ✅ **Intelligent Analysis** - Automatically detects style complexity and custom code
 ✅ **Automatic Template Selection** - Chooses the appropriate v3.0 template (base/neo/flux)
 ✅ **Code Preservation** - Preserves custom JavaScript (H5P, characters, phase management, etc.)
@@ -12,9 +24,11 @@ Automated tool to convert eXeLearning styles from version 2.9 to version 3.0.
 ✅ **Config.xml Update** - Converts metadata to v3.0 format
 ✅ **Validation** - Validates the converted output
 ✅ **Detailed Reports** - Generates comprehensive conversion reports
-✅ **Dry Run Mode** - Preview changes without modifying files
+✅ **Dry Run Mode** - Preview changes without modifying files (CLI only)
 
 ## Installation
+
+### For CLI Usage
 
 ```bash
 # Clone or download this repository
@@ -24,9 +38,43 @@ cd exelearning-style-converter
 npm install
 ```
 
+### For Web Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
 ## Usage
 
-### Basic Usage
+### Web Interface
+
+The easiest way to use the converter is through the web interface:
+
+1. **Visit the online tool** (after deployment):
+   [https://your-username.github.io/exelearning-style-converter/](https://your-username.github.io/exelearning-style-converter/)
+
+2. **Upload your v2.9 style folder**
+   Click "Select style folder" and choose your old style directory
+
+3. **Convert**
+   Click the "Convert Style" button and watch the progress
+
+4. **Download**
+   The ZIP file will download automatically when complete
+
+5. **Import into eXeLearning 3.0**
+   Go to Tools → Preferences → Styles → Import Style
+
+### CLI Usage
+
+#### Basic Usage
 
 Convert a single style:
 
