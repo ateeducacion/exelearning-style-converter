@@ -4,7 +4,7 @@ Automated tool to convert eXeLearning styles from version 2.9 to version 3.0.
 
 ## 🌐 Web Interface (Recommended)
 
-**Use the online converter:** [https://your-username.github.io/exelearning-style-converter/](https://your-username.github.io/exelearning-style-converter/)
+**Use the online converter:** [https://ateeducacion.github.io/exelearning-style-converter/](https://ateeducacion.github.io/exelearning-style-converter/)
 
 No installation needed! Simply:
 1. Open the web interface in your browser
@@ -58,7 +58,7 @@ npm run build
 The easiest way to use the converter is through the web interface:
 
 1. **Visit the online tool** (after deployment):
-   [https://your-username.github.io/exelearning-style-converter/](https://your-username.github.io/exelearning-style-converter/)
+   [https://ateeducacion.github.io/exelearning-style-converter/](https://ateeducacion.github.io/exelearning-style-converter/)
 
 2. **Upload your v2.9 style**
    - **Option 1 (Folder):** Click the "Folder" tab and select your old style directory
