@@ -18,14 +18,15 @@ export class BrowserStyleConverter {
     /**
      * Main conversion method
      * @param {Map} filesMap - Map of filepath → fileData
+     * @param {string} styleName - Optional style name (from ZIP filename or folder name)
      * @returns {Promise<Object>} Conversion results
      */
-    async convert(filesMap) {
+    async convert(filesMap, styleName = null) {
         try {
             this.onProgress('Starting conversion...');
 
             // Step 1: Analyze
-            const analysis = this.analyze(filesMap);
+            const analysis = this.analyze(filesMap, styleName);
             this.onProgress(`Analysis complete: ${analysis.complexity} style (${analysis.template} template)`);
 
             // Step 2: Transform JavaScript
@@ -77,8 +78,8 @@ export class BrowserStyleConverter {
     /**
      * Analyze the uploaded style
      */
-    analyze(filesMap) {
-        const styleName = this.getStyleName(filesMap);
+    analyze(filesMap, providedStyleName = null) {
+        const styleName = providedStyleName || this.getStyleName(filesMap);
 
         // Find JavaScript file
         const jsFile = this.findJSFile(filesMap);

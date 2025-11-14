@@ -110,8 +110,11 @@ class App {
                 onProgress: (msg) => this.console.info(msg)
             });
 
+            // Get style name from file handler
+            const styleName = this.fileHandler.getStyleName();
+
             // Convert
-            const result = await this.converter.convert(this.filesMap);
+            const result = await this.converter.convert(this.filesMap, styleName);
 
             this.console.blank();
             this.console.separator();
