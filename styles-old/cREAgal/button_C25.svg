@@ -1,0 +1,16 @@
+<svg id="Grupo_726" data-name="Grupo 726" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_396" data-name="Rectángulo 396" width="48" height="48" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_725" data-name="Grupo 725" clip-path="url(#clip-path)">
+    <path id="Trazado_338" data-name="Trazado 338" d="M48,6V42a6,6,0,0,1-6,6H6a6,6,0,0,1-6-6V6A6,6,0,0,1,6,0H42a6,6,0,0,1,6,6" fill="#007bc4"/>
+    <path id="Trazado_339" data-name="Trazado 339" d="M22.688,38.437v.445a2.263,2.263,0,0,0,2.256,2.256h16.17a2.263,2.263,0,0,0,2.256-2.256V15.191a2.263,2.263,0,0,0-2.256-2.256H24.944a2.263,2.263,0,0,0-2.256,2.256v6.122" transform="translate(-5.672 -3.234)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line id="Línea_264" data-name="Línea 264" x1="13.913" transform="translate(20.4 15.435)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line id="Línea_265" data-name="Línea 265" x1="13.13" transform="translate(21.183 21.013)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line id="Línea_266" data-name="Línea 266" x1="9.213" transform="translate(25.101 26.591)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line id="Línea_267" data-name="Línea 267" x1="9.213" transform="translate(25.101 32.169)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Trazado_340" data-name="Trazado 340" d="M23.229,31.175a.941.941,0,0,0-.053-.081,7.218,7.218,0,0,0-1.345-1.616,4.906,4.906,0,0,1-1.508-2.489l-.31-1.24a1.148,1.148,0,0,0-2.228.557l.31,1.239a7.192,7.192,0,0,0,1.639,3.074H15.455a1.148,1.148,0,1,0,0,2.3h.017v.127h-.017a1.148,1.148,0,1,0,0,2.3h.017v.127h-.017a1.148,1.148,0,1,0,0,2.3h.017v.315a1.145,1.145,0,0,0,.365,2.23H18.9a5.363,5.363,0,0,0,5.357-5.357v-.07A7.226,7.226,0,0,0,23.229,31.175Z" transform="translate(-3.577 -6.22)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>

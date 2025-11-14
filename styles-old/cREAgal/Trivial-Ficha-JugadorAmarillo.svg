@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #007bc4;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #fff899;
+      }
+    </style>
+  </defs>
+  <g id="Jugadores">
+    <g id="Amarillo">
+      <circle class="cls-2" cx="20" cy="20" r="20"/>
+      <circle class="cls-1" cx="20" cy="20" r="19"/>
+    </g>
+  </g>
+</svg>

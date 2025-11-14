@@ -1,0 +1,5429 @@
+/*cREAgal v2.3 20250322*/
+
+:root{
+  --light-blue-color: #007BC4;
+  --dark-blue-color: #002B4A;
+  --dua-eng-color: #00ED7B;
+  --dua-rep-color: #D6ACFF;
+  --dua-exp-color: #00CAFF;
+  --height-score:54px;
+  --text-score-font :1.875em;
+  --text-score-padding : 0.1em 0e 0 0e;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: "Atkinson";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Atkinson Regular"), local("Atkinson-Regular"),
+    url(Atkinson-Hyperlegible-Regular-102a.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+  font-family: "Atkinson Bold";
+  font-style: bold;
+  font-weight: 300;
+  src: local("Atkinson Bold"), local("Atkinson-Bold"),
+    url(Atkinson-Hyperlegible-Bold-102a.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Atkinson";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Atkinson Regular"), local("Atkinson-Regular"),
+    url(Atkinson-Hyperlegible-Regular-102a.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Atkinson Bold";
+  font-style: bold;
+  font-weight: 300;
+  src: local("Atkinson Bold"), local("Atkinson-Bold"),
+    url(Atkinson-Hyperlegible-Bold-102a.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: "Atkinson";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Atkinson Regular"), local("Atkinson-Regular"),
+    url(Atkinson-Hyperlegible-Regular-102a.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Atkinson Bold";
+  font-style: bold;
+  font-weight: 300;
+  src: local("Atkinson Bold"), local("Atkinson-Bold"),
+    url(Atkinson-Hyperlegible-Bold-102a.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font: 1em/1em "Atkinson", Arial, Helvetica, sans-serif;
+  padding: 20px;
+  margin: 0;
+  text-align: left;
+  color: #002b4a;
+  background: #ffffff;
+}
+
+textarea{
+  font-family: "Atkinson", ​Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+}
+
+select,
+input,
+.feedback {
+  font-family: "Atkinson", ​Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+}
+
+.pre-code,
+.highlighted-code {
+  font-family: "Atkinson", ​Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  border-radius: 0;
+}
+
+a {
+  color: #007691;
+}
+
+/* Header is also in single page */
+h1 {
+  font-size: 2.4rem;
+  line-height: 1.25em;
+  color: #002b4a;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+}
+
+#header h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #002B4A;
+}
+
+#header,
+#emptyHeader,
+#nodeDecoration {
+  height: auto;
+  font-size: 1em;
+  line-height: 1.8em;
+  text-align: left;
+  letter-spacing: 0.5px;
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+.exe-single-page #header {
+  font-size: 1.55em;
+}
+
+#nodeTitle {
+  font-size: 1.5em;
+  line-height: normal;
+  font-weight: bold;
+  margin: 0;
+  color: #002b4a;
+  padding: 6px;
+}
+
+#header h1 {
+ text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 5px rgba(255, 255, 255, 0.6), 0 0 2px rgba(255, 255, 255, 0.9);
+}
+
+/* .nodeTitle when single page */
+.nodeTitle {
+  padding: 25px 0;
+  border-bottom: 1px dotted #97afb2;
+  margin: 25px 0 0 0;
+  color: #3a4749;
+  letter-spacing: 0.5px;
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.25em;
+  color: #002b4a;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+  line-height: 1.5rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  line-height: 1.25em;
+  color: #002b4a;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+}
+
+p {
+  font-size: 1.1em;
+  margin: 1em 0.3em;
+  line-height: 1.5em;
+}
+
+
+ol,
+ul {
+  color: #002B4A;
+  margin: 8px 0px 0px 0px;
+}
+
+ol li,
+ul li {
+  margin-bottom: 8px;
+  line-height: 1.9rem;
+  font-size:1.1rem;
+}
+
+#main {
+  height: auto !important;
+  height: 300px;
+  min-height: 400px;
+  border-bottom: 1px solid #BFDEF0;
+}
+
+#main h4 {
+  font-size: 1.2rem;
+  line-height: 1.25em;
+  font-weight: normal;
+}
+
+#main h5 {
+  font-size: 1.1rem;
+  line-height: 1.25em;
+  font-weight: normal;
+}
+
+#main h6 {
+  font-size: 0.9rem;
+  line-height: 1.25em;
+  font-weight: normal;
+}
+
+.iDevice {
+  margin: 25px 0;
+}
+
+/* iDevice icons */
+.iDevice_header {
+  background: url(icon_udl_exp_interactivo.svg) no-repeat 0 50%;
+  padding-left: 51px;
+  position: relative;
+  height: 48px;
+}
+
+.hidden-idevice .iDevice_header {
+  background-color: #FFFFFF;
+  padding-left: 51px;
+  border-bottom: 3px solid var(--dua-exp-color);
+}
+
+.iDevice_header.iDevice_header_noIcon {
+  padding: 0;
+}
+
+.activityIdevice .iDevice_header {
+  background-image: url(icon_udl_exp_actividad.svg);
+  padding-left: 51px;
+
+}
+
+.readingIdevice .iDevice_header {
+  background-image: url(icon_udl_rep_lee.svg);
+  padding-left: 51px;
+}
+
+.objectivesIdevice .iDevice_header {
+  background-image: url(icon_udl_eng_objetivos.svg);
+  padding-left: 51px;
+}
+
+.RssIdevice .iDevice_header {
+  background-image: url(icon_udl_eng_rss.svg);
+  padding-left: 51px;
+}
+
+.RubricIdevice .iDevice_header {
+  background-image: url(icon_udl_eng_rubrica.svg);
+  padding-left: 51px;
+}
+
+.OrientacionesalumnadofpdIdevice .iDevice_header,
+.OrientacionestutoriafpdIdevice .iDevice_header {
+  background-image: url(icon_udl_eng_rubrica.svg);
+  padding-left: 51px;
+}
+
+.GalleryIdevice .iDevice_header {
+  background-image: url(icon_udl_rep_galeria.svg);
+  padding-left: 51px;
+}
+
+.FileAttachIdeviceInc .iDevice_header {
+  background-image: url(icon_udl_rep_adjunto.svg);
+  padding-left: 51px;
+}
+
+.CasopracticofpdIdevice .iDevice_header,
+.CasestudyIdevice .iDevice_header {
+  background-image: url(icon_udl_rep_caso.svg);
+  padding-left: 51px;
+}
+
+.CitasparapensarfpdIdevice .iDevice_header,
+.ReflectionfpdIdevice .iDevice_header,
+.ReflectionfpdmodifIdevice .iDevice_header,
+.ReflectionIdevice .iDevice_header {
+  background-image: url(icon_udl_rep_reflexion.svg);
+  padding-left: 51px;
+}
+
+.EjercicioresueltofpdIdevice .iDevice_header {
+  background-image: url(icon_udl_rep_ejemplo.svg);
+  padding-left: 51px;
+}
+
+.ParasabermasfpdIdevice .iDevice_header,
+.WikipediaIdevice .iDevice_header {
+  background-image: url(icon_udl_rep_informarse.svg);
+  padding-left: 51px;
+}
+
+.RecomendacionfpdIdevice .iDevice_header {
+  background-image: url(icon_udl_rep_recomendacion.svg);
+  padding-left: 51px;
+}
+
+.DebesconocerfpdIdevice .iDevice_header,
+.preknowledgeIdevice .iDevice_header {
+  background-image: url(icon_udl_rep_conocer.svg);
+  padding-left: 51px;
+}
+
+/* iDevice title */
+.iDeviceTitle {
+  font-family: "Atkinson Regular", Arial, Helvetica, sans-serif;
+  font-size: 1.25em;
+  display: inline;
+  font-weight: normal;
+  vertical-align: top;
+  top: unset;
+  color: var(--dark-blue-color);
+  line-height: 1.625rem;
+  letter-spacing: 0.5px;
+  position: absolute;
+  bottom: 0px;
+  margin: 0px;
+  padding: 2px 10px;
+}
+
+.iDevice_content {
+  overflow: auto;
+}
+
+/* iDevice content */
+.iDevice_inner {
+  padding: 10px 20px;
+  border-top: 3px solid  var(--dua-rep-color);
+}
+.toggle-idevice a {
+  display: inline-block;
+  width: 32px;
+  height: 21px;
+  background:  url(crg.despliegue.azul2.arriba.svg) no-repeat 0 0;
+}
+
+.toggle-idevice .show-idevice {
+  background-image:  url(crg.despliegue.azul2.abajo.svg);
+}
+
+.em_iDevice_question .iDevice_inner, .em_iDevice_activity .iDevice_inner {
+  padding: 10px 20px;
+  border-top: 3px solid  var(--dua-exp-color);
+}
+
+.em_iDevice_question.hidden-idevice .iDevice_header  , .em_iDevice_activity.hidden-idevice .iDevice_header {
+  background-color: #FFFFFF;
+  padding-left: 51px;
+  border-bottom: 3px solid var(--dua-exp-color);
+}
+.em_iDevice_question .toggle-idevice a ,.em_iDevice_activity .toggle-idevice a {
+  display: inline-block;
+  width: 32px;
+  height: 21px;
+  background:  url(crg.despliegue.azul2.arriba.svg) no-repeat 0 0;
+}
+
+.em_iDevice_question .toggle-idevice .show-idevice , .em_iDevice_activity .toggle-idevice .show-idevice {
+  background-image:  url(crg.despliegue.azul2.abajo.svg);
+}
+
+.textIdevice .toggle-idevice a,
+.readingIdevice  .toggle-idevice a,
+.RssIdevice  .toggle-idevice a,
+.GalleryIdevice  .toggle-idevice a,
+.FileAttachIdeviceInc  .toggle-idevice a,
+.preknowledgeIdevice  .toggle-idevice a,
+.WikipediaIdevice  .toggle-idevice a  {
+  display: inline-block;
+  width: 32px;
+  height: 21px;
+  background:  url(crg.despliegue.malva.arriba.svg) no-repeat 0 0;
+}
+
+.textIdevice  .toggle-idevice .show-idevice ,
+.readingIdevice  .toggle-idevice .show-idevice ,
+.RssIdevice  .toggle-idevice .show-idevice ,
+.GalleryIdevice  .toggle-idevice .show-idevice ,
+.FileAttachIdeviceInc  .toggle-idevice .show-idevice ,
+.preknowledgeIdevice  .toggle-idevice .show-idevice ,
+.WikipediaIdevice .toggle-idevice .show-idevice {
+  background-image:  url(crg.despliegue.malva.abajo.svg);
+}
+
+.textIdevice.hidden-idevice .iDevice_header ,
+.readingIdevice.hidden-idevice .iDevice_header  ,
+.RssIdevice.hidden-idevice .iDevice_header  ,
+.GalleryIdevice.hidden-idevice .iDevice_header  ,
+.FileAttachIdeviceInc.hidden-idevice .iDevice_header ,
+.preknowledgeIdevice.hidden-idevice .iDevice_header  ,
+.WikipediaIdevice.hidden-idevice .iDevice_header {
+  background-color: #FFFFFF;
+  padding-left: 51px;
+  border-bottom: 3px solid var(--dua-rep-color);
+}
+
+.RubricIdevice  .toggle-idevice a , .objectivesIdevice  .toggle-idevice a,{
+  display: inline-block;
+  width: 32px;
+  height: 21px;
+  background:  url(crg.despliegue.verde.arriba.svg) no-repeat 0 0;
+}
+.RubricIdevice .toggle-idevice .show-idevice , .objectivesIdevice  .toggle-idevice .show-idevice , 
+.download-packageIdevice .toggle-idevice  .show-idevice  {
+  background:  url(crg.despliegue.verde.abajo.svg) no-repeat 0 0;
+}
+.RubricIdevice .toggle-idevice a , .objectivesIdevice  .toggle-idevice a ,
+.download-packageIdevice .toggle-idevice a  {
+  background:  url(crg.despliegue.verde.arriba.svg) no-repeat 0 0;
+}
+.RubricIdevice.hidden-idevice .iDevice_header, .objectivesIdevice.hidden-idevice .iDevice_header ,
+.download-packageIdevice.hidden-idevice .iDevice_header   {
+  border-bottom: 3px solid var(--dua-eng-color);
+}
+.RubricIdevice  .iDevice_inner , .download-packageIdevice  .iDevice_inner, .objectivesIdevice  .iDevice_inner{
+  border-top: 3px solid var(--dua-eng-color);  
+}
+
+.toggle-idevice span,
+#printNode a span {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  height: 0;
+}
+
+#siteFooter {
+  font-size: 0.95em;
+  margin: 25px 0;
+}
+
+#siteFooter a {
+  color: #db0b00;
+}
+
+#lbOverlay {
+  background-color: #e2e2e2;
+}
+
+#lbOuterContainer {
+  border-color: #dddddd;
+}
+
+.ExternalUrlIdevice iframe {
+  border: none;
+}
+
+/* Lightbox */
+.exeImageGallery {
+  width: 100%;
+}
+
+/* base.css */
+.block,
+.feedback {
+  padding: 0;
+}
+
+li {
+  list-style-position: outside;
+}
+
+#wikipedia-content ul li {
+  list-style-image: none;
+  margin-bottom: auto;
+}
+
+/* Form buttons */
+.iDevice_inner input[type="submit"],
+.feedbackbutton {
+  background: #007BC4;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  margin-bottom: 1em;
+}
+
+.iDevice_inner input[type="submit"]:hover,
+.feedbackbutton:hover,
+.iDevice_inner input[type="submit"]:focus,
+.feedbackbutton:focus {
+  background: #3F9CD2;
+}
+
+/* Hide/Show iDevice */
+.toggle-idevice {
+  text-align: right;
+  display: block;
+  margin-right: 13px;
+}
+
+.iDevice_header .toggle-idevice {
+  position: absolute;
+  right: 13px;
+  bottom: 0;
+  margin: 0;
+}
+
+
+
+.js .exe-dl dt {
+  margin: 2em 0 2em 0;
+}
+
+.exe-dl dt a {
+  border: solid 1px #007bc4;
+  border-radius: 8px;
+  padding: 14px 16px 14px 0px;
+  position: relative;
+  left: -20px;
+  color: #002b4a;
+  background: #e5f2f9;
+}
+
+.exe-dl dt a span {
+  left: 20px;
+  margin-right: 30px !important;
+  text-decoration: none;
+}
+
+@-moz-document url-prefix() {
+  .exe-dl dt a span {
+    left: 15px;
+  }
+}
+
+/* eXe < 2.1 */
+.iDevice a,
+#siteFooter a,
+#packageLicense a,
+.toggle-idevice a {
+  text-decoration: underline;
+}
+
+/* Licenses */
+#packageLicense {
+  text-align: left;
+  font-size: 0.8rem;
+  padding: 0 20px;
+  color: #ffffff;
+  line-height: 1em;
+  margin: 0 0 25px 0;
+  background: #526668;
+  border: 1px solid #526668;
+  box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 4px;
+}
+
+#packageLicense p {
+  margin: 20px 0;
+  font-size: 0.8rem;
+
+}
+
+#packageLicense a {
+  color: #bfdef0;
+  text-decoration: underline;
+}
+
+#packageLicense.propietary {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  height: 0;
+}
+
+#packageLicense.cc {
+  padding: 0 20px 0 110px;
+  background: #002b4a url(_intef_licenses.gif) no-repeat 20px 5px;
+}
+
+#packageLicense.cc-by-sa {
+  background-position: 20px -95px;
+}
+
+#packageLicense.cc-by-nd {
+  background-position: 20px -195px;
+}
+
+#packageLicense.cc-by-nc {
+  background-position: 20px -295px;
+}
+
+#packageLicense.cc-by-nc-sa {
+  background-position: 20px -395px;
+}
+
+#packageLicense.cc-by-nc-nd {
+  background-position: 20px -495px;
+}
+
+#packageLicense.cc-0 {
+  background-position: 20px -595px;
+}
+
+/* eXe Figures */
+.exe-figure {
+  margin: 2.5em 0;
+}
+
+.exe-figure figcaption {
+  text-align: center;
+  font-size:0.85rem;
+}
+
+.exe-figure figcaption a {
+  text-decoration: underline;
+}
+
+.position-center {
+  margin: 2.5em auto;
+}
+
+.position-right {
+  margin: 2.5em 0 2.5em auto;
+}
+
+.float-left {
+  margin: 0.5em 1.5em 1em 0;
+}
+
+.float-right {
+  float: right;
+  margin: 0.5em 0 1em 2em;
+}
+
+#printNode {
+  margin: 0;
+  position: absolute;
+  top: 33px;
+  right: 33px;
+}
+
+#printNode.with-toggler {
+  margin-bottom: 0;
+}
+
+#printNode a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: #ffffff url(_intef_print.png) no-repeat 50% 50%;
+  box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 4px;
+  border-radius: 15px;
+}
+
+@media print {
+
+  #nodeDecoration,
+  #header,
+  #emptyHeader {
+    color: #000;
+    text-shadow: none;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 20px 0;
+  }
+
+  #packageLicense,
+  #packageLicense.cc {
+    background: none;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+  }
+
+  #packageLicense,
+  #packageLicense a,
+  #nodeTitle,
+  .nodeTitle {
+    color: #000;
+  }
+
+  .hidden-idevice .iDevice_header {
+    box-shadow: none;
+  }
+
+  .iDevice_inner {
+    box-shadow: none;
+    padding: 10px 0;
+  }
+
+  .iDevice_header {
+    padding: 5px 0;
+  }
+
+  .toggle-idevice {
+    display: none;
+  }
+
+  /* Uncomment this to print URL after links:
+	a[href^=http]{font-weight:bold;text-decoration:none!important}
+	a[href^=http]:after{content:" <" attr(href) "> "}
+	*/
+}
+
+/* Hint & Feedback */
+.iDevice_hint_content {
+  background: #E5F2F9;
+  color: #002B4A;
+  border-bottom: 1px solid #80BDE1;
+  border-left: 1px solid #80BDE1;
+  border-right: 1px solid #80BDE1;
+}
+
+.iDevice_hint_content p:first-child {
+  margin-top: 0;
+  padding-top: 1em;
+}
+
+.iDevice_inner .feedback {
+  background: #e5f2f9;
+  border: 1px solid #80bde1;
+  padding: 0 1em;
+  margin: 1em 0;
+  color: #002b4a;
+}
+
+.iDevice_inner .feedback ul li {
+  margin: 8px 0px;
+}
+
+.iDevice_inner .feedback p {
+  font-size: 1em;
+}
+
+.iDevice_inner .feedback-right {
+  background: #BFDEF0;
+  border: 0px;
+  border-radius: 8px;
+  font-weight: bold;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.iDevice_inner .feedback-wrong {
+  background: #BFDEF0;
+  border: 0px;
+  border-radius: 8px;
+  font-weight: bold;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.iDevice_inner .iDevice_answer-feedback {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.TrueFalseIdevice .feedback {
+  margin-top: 1.5em;
+  font-size: 1.25em;
+}
+.TrueFalseIdevice .feedback::after {
+  content: ""; 
+  clear: both;
+  display: table;
+  padding-bottom:10px;
+} 
+
+.MultichoiceIdevice .feedback,
+.MultiSelectIdevice .feedback,
+.QuizTestIdevice .feedback,
+.EleccionmultiplefpdIdevice .feedback{
+  font-size: 1.25em;
+}
+
+.activity-form div .iDevice_buttons p input {
+  background: #007BC4;
+  border-radius: 8px;
+  color: #FFFFFF;
+  border: 0px;
+  margin: 5px 5px 5px 0px;
+  padding: 8px 16px;
+}
+
+.activity-form div .iDevice_buttons p input:hover {
+  background: #3F9CD2;
+}
+
+.activity-form div input,
+.activity-form div select {
+  border-radius: 4px;
+  border: 1px solid #007BC4;
+  margin: 2px 0px;
+}
+
+.activity-form div div[id^='clozeScore']:not(:empty) {
+  background: #BFDEF0;
+  width: 100%;
+  border-radius: 8px;
+  padding: 16px 16px;
+  font-weight: bold;
+  display: flex;
+  gap: 8px;
+  font-size: 1.25em;
+}
+
+.activity-form div div[id^='clozeScore']:not(:empty)::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: url(crg.despliegue.doble.negro.svg) no-repeat;
+  font-weight: bold;
+  display: inline-block;
+  margin-top:-4px;
+}
+
+.exe-sortableList p[id^='exe-sortableListButton'] {
+  width: auto;
+  display: inline-block;
+}
+
+.quiz-test-form div[id^='quizFormScore'] .feedback {
+  font-weight: bold;
+}
+
+.quiz-test-form div[id^='quizFormScore'] .feedback p {
+  display: flex;
+  gap: 8px;
+}
+
+.quiz-test-form div[id^='quizFormScore'] .feedback p::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: url(crg.despliegue.doble.negro.svg) no-repeat;
+  font-weight: bold;
+  display: inline-block;
+  margin-top:2px;
+}
+
+.FreeTextfpdIdevice h3 {
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 2.375rem;
+}
+
+.js #main .iDevice_hint_title {
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+  border-bottom: 1px solid #80BDE1;
+}
+
+.js #main .iDevice_hint_title a.show-hint {
+  background: url(crg.despliegue.azul.abajo.small.svg) right 10px top 50% no-repeat !important;
+}
+
+.js #main .iDevice_hint_title a.hide-hint {
+  background: url(crg.despliegue.azul.arriba.small.svg) right 10px top 50% no-repeat !important;
+}
+
+.iDevice_hint_title a {
+  color: #007BC4;
+  padding-left: 0;
+  width: 100%;
+  display: flex;
+  background-image: none !important;
+  align-items: center;
+  font-size: 1.25em;
+}
+
+.iDevice_hint_title a:before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(crg.mas.svg) no-repeat;
+  margin-right: 12px;
+  margin-bottom: 8px;
+}
+
+.iDevice_answer p.right-option {
+  color: #007BC4;
+  margin-left: 1.5em;
+  display: flex;
+  line-height:1.3em;
+  gap: 8px;
+}
+
+.iDevice_answer p.right-option::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url(crg.despliegue.doble.negro.svg) no-repeat;
+
+}
+
+.iDevice_answer p.wrong-option {
+  margin-top: 0;
+  margin-left: 1.5em;
+  display: flex;
+  line-height:1.3em;
+  gap: 8px;
+}
+
+.iDevice_answer p.wrong-option::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url(crg.despliegue.doble.negro.svg) no-repeat;
+
+}
+
+.iDevice_answer-field {
+  width: 1.5em;
+  float: left;
+}
+
+.js .iDevice_answer-content,
+.js .iDevice_answer-feedback {
+  padding-left: 1.5em;
+}
+
+.qtip {
+  background: #FFF899 !important;
+  border: 0px !important;
+  font-family: "Atkinson" !important;
+  color: #FFF899 !important;
+  border-radius: 8px !important;
+}
+
+.qtip-titlebar {
+  background: #FFF899 !important;
+  font-family: "Atkinson" !important;
+  font-weight: bold !important;
+  border-radius: 8px !important;
+  color: #333333 !important;
+  font-size: 16px;
+  padding-top: 10px !important;
+}
+
+.qtip-content {
+  color: #002B4A !important;
+  padding: 0px 9px;
+}
+
+.qtip-content .exe-tooltip-text p:first-of-type {
+  margin-top: 0px;
+}
+
+.exe-quote-cite cite {
+  font-style: normal;
+  font-weight: bold;
+}
+
+.styled-qc {
+  font-family: Atkinson;
+}
+
+.styled-qc:before {
+  font-style: normal;
+  top: 30px;
+  color: #80bde1;
+}
+
+.pbl-task-info {
+  width: 100%;
+  display: flex;
+  background: #BFDEF0;
+  justify-content: flex-end;
+  padding: 6px 16px;
+}
+
+.pbl-task-info dt {
+  margin: 0 0 0 8px;
+}
+
+.pbl-task-info dd {
+  margin: 0 0 0 0 !important;
+}
+
+.js .exe-accordion {
+  border-radius: 8px;
+  background: #E5F2F9;
+}
+
+.fx-accordion-title {
+  border-top: 1px solid #80BDE1;
+  background: #002B4A url(crg.despliegue.blanca.abajo.svg) no-repeat right 32px top 50% !important;
+}
+
+.fx-accordion-title,
+.exe-accordion h2 {
+  font-size: 1.25em;
+  background: unset;
+  line-height: 1.5rem;
+  padding-right:70px;
+}
+
+.fx-accordion-title.active {
+  background-image: url(crg.despliegue.blanca.arriba.svg) !important;
+}
+
+.fx-accordion-content {
+  border: 1px solid #80BDE1;
+}
+
+.fx-accordion-content::after {
+  content: ""; 
+  clear: both;
+  display: table;
+  padding-bottom:6px;
+}
+
+.fx-accordion-section .fx-accordion-content:last-of-type {
+  border-radius: 0px 0px 8px 8px;
+}
+
+
+.exe-tabs .fx-tabs a {
+  padding: 8px 12px;
+  border-radius: 8px 8px 0px 0px;
+  background: #007BC4 !important;
+  color: #FFFFFF;
+  margin-right: 4px;
+  position: relative;
+  top: 4px;
+  font-size: 1.1em;
+  margin-bottom: 4px;
+  min-width:100px;
+  text-align:center;
+}
+
+.exe-tabs .fx-tabs a:hover,
+.exe-tabs .fx-tabs a:focus {
+  text-decoration: none;
+}
+
+.fx-tabs .fx-current a {
+  background: #002B4A !important;
+}
+
+.exe-tabs .fx-tab-content {
+  background: #E5F2F9 !important;
+  border: 1px solid #80BDE1;
+  border-radius: 0;
+  
+}
+
+.exe-tabs .fx-tab-content.fx-current {
+  overflow: auto;
+}
+
+.exe-paginated .fx-pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fx-pagination li {
+  background: none !important;
+  margin: unset;
+}
+
+.fx-pagination .fx-prev {
+  margin-right: unset;
+}
+
+.fx-pagination a {
+  padding: unset;
+  border-radius: unset;
+  background: unset;
+}
+
+.fx-pagination li:not(.fx-prev-next):not(.fx-carousel-prev-next) a {
+  min-width: 48px;
+  border-radius: 8px;
+  background: #007BC4 !important;
+  line-height: 48px;
+  font-size: 1.25em;
+  color: #FFFFFF;
+  margin-top: 4px;
+  text-decoration: none;
+}
+
+.fx-pagination li:not(.fx-prev-next):not(.fx-carousel-prev-next).fx-current a {
+  background: #002B4A !important;
+}
+
+.fx-carousel-pagination li {
+  font-size: 1em !important;
+}
+
+.fx-pagination a:hover,
+.fx-pagination a:focus {
+  color: unset;
+  text-decoration: none;
+}
+
+.fx-prev-next a {
+  font-family: none;
+  width: 16px;
+  height: 100%;
+  position: relative;
+}
+
+.fx-prev-next a span {
+  visibility: hidden;
+  content: "";
+}
+
+.fx-prev-next.fx-prev a {
+  background: url(crg.despliegue.azul.izquierda.small.svg) no-repeat 50% 50% !important;
+}
+
+.fx-prev-next.fx-next a {
+  background: url(crg.despliegue.azul.derecha.small.svg) no-repeat 50% 50% !important;
+}
+
+.fx-pagination .fx-disabled,
+.fx-pagination .fx-disabled a,
+.fx-pagination .fx-disabled a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.fx-page-content {
+  background: #E5F2F9 !important;
+  border: 1px solid #80BDE1;
+  border-radius: unset;
+}
+
+.fx-page-content.fx-current {
+  display: flex;
+  flex-direction: column;
+}
+
+.fx-page-content.fx-current a {
+  background: none !important;
+}
+
+.fx-carousel-pagination a {
+  padding: 0px 0px;
+  border-radius: 8px;
+}
+
+.fx-carousel-pagination a:hover,
+.fx-carousel-pagination a:focus {
+  text-decoration: none;
+}
+
+.fx-carousel-content {
+  display: none;
+  background: #E5F2F9 !important;
+  border-radius: unset;
+  border: 1px solid #80BDE1;
+}
+/*Erro no estilo, esta clase xera un espazo maior entre contido e título na primeira páxina*/
+.fx-carousel-content.fx-current {
+  display: flex;
+  flex-direction: column;
+}
+
+.fx-carousel-content.fx-current h2 {
+  font-weight: bold;
+}
+
+.fx-carousel-pagination .fx-carousel-prev-next {
+  top: 40px;
+}
+
+/* IE6, IE7 */
+.fx-carousel-pagination .fx-carousel-prev-next a {
+  background: none;
+  width: 30px;
+  height: 54px;
+  padding: unset;
+  line-height: unset;
+  font-size: unset;
+  font-family: unset;
+  border-radius: unset;
+  text-align: unset;
+  text-indent: unset;
+}
+
+.fx-carousel-pagination .fx-carousel-next a {
+  background: url(crg.despliegue.azul.derecha.svg) no-repeat 50% 50% !important;
+  text-indent: unset;
+}
+
+.fx-carousel-pagination .fx-carousel-next a span {
+  visibility: hidden;
+}
+
+.fx-carousel-pagination .fx-carousel-prev a {
+  background: url(crg.despliegue.azul.izquierda.svg) no-repeat 50% 50% !important;
+}
+
+.fx-carousel-pagination .fx-carousel-prev a span {
+  visibility: hidden;
+}
+
+.fx-timeline-container a.fx-timeline-expand {
+  background: #007BC4 !important;
+  border-radius: 8px;
+  font-size: 1.25em;
+  padding: 8px 16px;
+  text-decoration: none !important;
+}
+
+.fx-timeline-major h2 {
+  font-size: 1.25em !important;
+  margin: 0;
+  display: flex;
+}
+
+.fx-timeline-major h2 span {
+  border-radius: 8px;
+  background: #002B4A;
+  width: 100%;
+}
+
+.fx-timeline-major h2:before {
+  display: flex;
+  align-items: center;
+}
+
+.fx-timeline-major h2 a {
+  background: none !important;
+  border-radius: unset;
+  color: #FFFFFF;
+  line-height: 2em;
+}
+
+div.fx-timeline-minor {
+  width: 100%;
+}
+.fx-timeline-minor h3 {
+line-height:1.5em !important;
+white-space:normal !important;
+
+}
+.fx-timeline-minor h3:before {
+  content: "";
+  margin: 0 9px 0 0px;
+}
+
+.fx-timeline-minor h3 a {
+  color: #007BC4 !important;
+  font-size: 1em !important;
+  font-weight: bold;
+  border-bottom: 1px solid #80BDE1;
+  width: calc(100% - 20px);
+  display: inline-block;
+  background: url(crg.despliegue.azul.abajo.small.svg) no-repeat right 24px top 50%;
+  overflow-wrap: break-word;
+padding-right:80px !important;
+}
+
+.fx-timeline-major h2 a:hover,
+.fx-timeline-major h2 a:focus,
+.fx-timeline-minor h3 a:hover,
+.fx-timeline-minor h3 a:focus {
+  text-decoration: none;
+}
+
+.fx-timeline-minor h3 a.open {
+  border-bottom: none;
+  background-image: url(crg.despliegue.azul.arriba.small.svg);
+}
+
+.fx-timeline-event {
+  width: 90%;
+  border: 1px solid #80BDE1;
+  background: #E5F2F9;
+  margin-left: 32px;
+  padding: 10px 16px;
+}
+
+.fx-timeline-event h4 {
+  color: #002B4A;
+  font-size: 2em !important;
+  font-weight: bold !important;
+  margin: 20px 0px;
+}
+
+.fx-timeline-event p {
+  width: 100%;
+}
+
+div.pp_default .pp_top .pp_left {
+  background: none;
+}
+
+div.pp_default .pp_top .pp_middle {
+  background: none;
+}
+
+div.pp_default .pp_top .pp_right {
+  background: none;
+}
+
+div.pp_default .pp_content_container .pp_left {
+  background: none;
+  padding-left: unset;
+}
+
+div.pp_default .pp_content_container .pp_right {
+  background: none;
+  padding-right: unset;
+}
+
+div.pp_default .pp_next:hover {
+  background: none;
+  cursor: pointer;
+}
+
+div.pp_default .pp_description {
+  margin-left: 5px !important;
+}
+
+div.pp_default .pp_description[style^="display: none;"] {
+  display: block !important;
+  visibility: hidden;
+  min-height: 16px;
+}
+
+div.pp_default .pp_close {
+  width: 24px;
+  height: 24px;
+  background: url(crg.cerrar.popup.svg) no-repeat;
+}
+
+div.pp_default .pp_bottom .pp_left {
+  background: none;
+}
+
+div.pp_default .pp_bottom .pp_middle {
+  background: none;
+}
+
+div.pp_default .pp_bottom .pp_right {
+  background: none;
+}
+
+a.pp_close {
+  right: 10px;
+  top: 0px;
+}
+
+div.pp_default .pp_content {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0px 4px 25px #002B4A4D;
+  padding: 20px 5px 5px 5px;
+}
+
+div.pp_default #pp_full_res .pp_inline {
+  color: #002B4A;
+}
+
+div.pp_default .pp_details {
+  position: absolute;
+  bottom: 2px;
+}
+
+div.pp_overlay {
+  background: #E5F2F9;
+}
+
+#pp_full_res .pp_inline {
+  padding: 0 24px;
+}
+
+#pp_full_res .pp_inline p {
+  padding: 0;
+}
+
+#pp_full_res .pp_title {
+  color: unset;
+  font-size: 1em !important;
+  font-weight: bold;
+  padding: 0.25em 0 0.25em 0;
+}
+
+#start-activity a {
+  padding: 8px 16px !important;
+  background: #007BC4 !important;
+  color: #FFFFFF !important;
+  border-radius: 8px !important;
+  font-weight: unset !important;
+  text-decoration: none !important;
+  font-size: 1.25em;
+}
+
+#start-activity a:hover {
+  background: #3F9CD2 !important;
+}
+
+@media screen and (min-width: 100px) {
+  #activity {
+    border: none !important;
+    box-shadow: unset !important;
+  }
+}
+
+#slide.matchElements .random-a {
+  color: #002B4A !important;
+  background: #E5F2F9 !important;
+  border: 1px solid #BFDEF0 !important;
+  border-radius: 4px !important;
+}
+
+#slide.matchElements .random-b {
+  color: #002B4A !important;
+  border: 1px solid #007BC4 !important;
+  border-radius: 4px !important;
+}
+
+#slide .actions input {
+  padding: 8px 16px !important;
+  background: #007BC4 !important;
+  color: #FFFFFF !important;
+  border-radius: 8px !important;
+  font-weight: unset !important;
+  font-size: 1.25em !important;
+}
+
+#activity-results-toggler a {
+  border-radius: unset !important;
+  color: #007BC4 !important;
+  font-weight: bold !important;
+  background: url(crg.despliegue.azul.abajo.small.svg) no-repeat right 50% !important;
+  border: unset !important;
+  display: flex !important;
+  padding: 0.5em 0em !important;
+  width: 100% !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 1.25em;
+}
+
+#activity-results-toggler a:before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(crg.mas.svg) no-repeat
+}
+
+#activity-results-toggler .hide {
+  background-image: url(crg.despliegue.azul.arriba.small.svg) !important;
+}
+
+#activity-results-toggler {
+  font-size: 1em !important;
+}
+
+#activity-results table {
+  font-size: 1.25em !important;
+  border: 1px solid #80BDE1 !important;
+  background: #E5F2F9 !important;
+}
+
+#activity-results th {
+  font-size: 1em !important;
+  font-weight: bold !important;
+  color: #002B4A !important;
+  padding: 10px 0 !important;
+  border-bottom: 1px solid #002B4A !important;
+}
+
+#activity-results #resultsSummary {
+  font-size: unset !important;
+  font-weight: unset !important;
+  color: unset !important;
+  padding: unset !important;
+  border-bottom: unset !important;
+}
+
+#activity-results #resultsSummaryTH {
+  font-size: 1em !important;
+  font-weight: bold !important;
+  border-top: 1px solid #002B4A !important;
+  border-bottom: none !important;
+  padding-left: 30px !important;
+  background: url(crg.despliegue.doble.negro.svg) left 8px top 50% no-repeat !important;
+}
+
+#activity-results #resultsSummary {
+  font-size: 1em !important;
+  font-weight: bold !important;
+  color: #002B4A !important;
+  border-top: 1px solid #002B4A !important;
+}
+
+#activity-results #resultsSummaryTH em {
+  color: #002B4A !important;
+  font-size: 1em !important;
+}
+
+#activity-results td {
+  border-bottom: unset !important;
+  color: #002B4A !important;
+}
+
+#activity-results td.order {
+  font-weight: bold !important;
+}
+
+tr.even td {
+  background: #BFDEF0 !important;
+}
+
+.exe-sortableList-options {
+  margin: 0.5em 0 !important;
+
+}
+
+.exe-sortableList-options li {
+  font-size: 1.10em;
+  background: #E5F2F9 !important;
+  color: #002B4A !important;
+  border: 1px solid #007BC4 !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  padding:4px 80px 2px 8px !important;
+  overflow-wrap: break-word;
+}
+
+.exe-sortableList .first .up,
+.exe-sortableList-options .last .down {
+  pointer-events: none !important;
+  visibility: unset !important;
+}
+
+.exe-sortableList .first .up {
+  background-image: url(crg.flecha.abajo.desmarcada.svg) !important;
+}
+
+.exe-sortableList-options .last .down {
+  background-image: url(crg.flecha.abajo.desmarcada.svg) !important;
+}
+
+.exe-sortableList li a {
+  background: url(crg.flecha.arriba.marcada.svg) no-repeat 0 0 !important;
+}
+
+.exe-sortableList li .down {
+  background-image: url(crg.flecha.abajo.marcada.svg) !important;
+  right: 13px;
+}
+
+
+.no-nav #main-wrapper #nodeDecoration #nodeTitle {
+  left: 160px;
+}
+
+
+.exe-download-package-instructions .exe-table caption {
+  font-size: 1rem;
+}
+
+.exe-table td,
+.exe-table th {
+  border-color: #80bde1;
+  line-height: 1.25em;
+  /*padding:0.2rem !important;*/
+  box-sizing: border-box;
+}
+
+.exe-table a {
+  color: #002b4a;
+  text-decoration: underline;
+}
+
+.exe-table tbody tr:nth-child(2n-1) th {
+  background-color: #bfdef0;
+}
+
+.exe-table tbody tr:nth-child(2n-1) td {
+  background-color: #e5f2f9;
+}
+
+.exe-table tbody tr:nth-child(2n) th {
+  background-color: #e5f2f9;
+}
+
+.exe-table tbody tr:nth-child(2n) td {
+  background-color: #ffffff;
+}
+
+.exe-download-package-link a {
+  background-color: #007bc4 !important;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff !important;
+  font-size: 1.25em;
+  text-decoration: none !important;
+}
+
+.exe-download-package-link a:hover {
+  background-color: #3f9cd2;
+}
+
+.FileAttachIdeviceInc .exeFileList{
+margin-top:20px;
+  }
+  
+.FileAttachIdeviceInc .exeFileList li {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  background-image: url(anexo.svg);
+  background-repeat: no-repeat;
+  background-size: 36px 46px;
+  margin-top:10px;
+  padding:10px 10px 10px 44px;  
+}
+
+.FileAttachIdeviceInc .exeFileList li a {
+  margin-left: 2px;
+  text-decoration: underline;
+}
+
+.FileAttachIdeviceInc .exeFileList li a span {
+  text-decoration: none;
+  display:none;
+  margin-bottom:4px;
+  margin-left:6px;
+}
+
+.GalleryIdevice .exeImageGallery {
+  display: flex;
+  justify-content: center;
+}
+
+.RubricIdevice caption {
+  font-size: 1rem !important;
+}
+
+.RubricIdevice .exe-table td,
+.RubricIdevice .exe-table th {
+  border-color: #80bde1;
+}
+
+.RubricIdevice .exe-table td span,
+.RubricIdevice .exe-table th span {
+  opacity: 1;
+}
+
+.emphasis1 .exe-fx .fx-C2 a {
+  background: unset;
+}
+
+.exe-scorm {
+  padding: 0;
+  text-align: center;
+  overflow-x: hidden
+}
+
+.exe-authoring-page {
+  padding: 0;
+  overflow-x: hidden
+}
+
+.exe-authoring-page #main {
+  padding: 0 20px;
+}
+
+.exe-scorm::before,
+.exe-authoring-page::before {
+  content: "";
+  width: 100%;
+  height: 60px;
+  display: block;
+  background: #002B4A url(crg-iso.png) left 38px top 2px no-repeat;
+  background-size: contain;
+}
+
+.exe-scorm>.iDevice_header.iDevice_header_noIcon,
+.exe-authoring-page>.iDevice_header.iDevice_header_noIcon {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.exe-scorm #nodeDecoration,
+.exe-authoring-page #nodeDecoration {
+  border-top: 1px solid #BFDEF0;
+  margin-top: 115px;
+}
+
+.exe-scorm #nodeTitle,
+.exe-authoring-page #nodeTitle {
+  padding: 8px 0 0 0;
+  color: #007bc4;
+  font-size: 1.5em;
+  font-family: "Atkinson Bold";
+  line-height: normal;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  bottom: 100%
+}
+.exe-scorm #nodeDecoration {
+  position:relative;
+  padding:0;
+  margin:80px 4px 10px 4px;
+}
+.exe-scorm #nodeDecoration #nodeTitle{
+margin:100px 0 0 0;
+height:auto;
+}
+.exe-authoring-page #nodeDecoration #nodeTitle {
+margin-bottom:0px;
+}
+.exe-authoring-page #nodeDecoration {
+  position:relative;
+  padding:0;
+  margin:90px 4px 10px 4px;
+}
+.exe-authoring-page #nodeDecoration #nodeTitle{
+margin:100px 0 0 0;
+height:auto;
+padding-bottom:0px;
+}
+
+
+
+.exe-scorm #outer,
+.exe-authoring-page #outer {
+  width: 100%;
+  max-width: 1230px;
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+  padding-bottom: 21px;
+}
+
+.exe-authoring-page .udlContentFormBlockButtonTxtOptions .pos-1{
+  content: url(Personaxe1-small.png) !important
+}
+
+.exe-authoring-page .udlContentFormBlockButtonTxtOptions .pos-2{
+  content: url(Personaxe2-small.png) !important
+}
+
+.exe-authoring-page .udlContentFormBlockButtonTxtOptions .pos-3{
+  content: url(Personaxe3-small.png) !important
+}
+
+.exe-authoring-page .udlContentFormBlockButtonTxtOptions .pos-4{
+  content: url(Personaxe4-small.png) !important
+}
+.exe-authoring-page .udlContentFormBlockButtonTxtOptions img{
+  margin-left:80px !important;
+  margin-top:-20px !important;
+  width:90px !important;
+  height:auto !important;
+}
+.exe-text{
+  font-size: 1.1rem;
+}
+
+.exe-text p {
+  font-size: 1.1rem;
+}
+
+
+/* -------------- GAMES --------------------- */
+
+.gameQP-MainContainer {
+  margin: 1em 0;
+}
+
+.gameQP-MainContainer {
+  margin: 1em 0;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer {
+  margin: 1em 0;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-GameScores p {
+  color: #FFFFFF;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-TimeNumber p {
+  color: #FFFFFF;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-Time {
+  content: url("crg.tempo.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-GameScoreBoard .gameQP-TimeNumber a {
+  margin-right: 16px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-Multimedia {
+  width: 75%;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-Multimedia img.gameQP-Cover {
+  content: url("Thumbnail-Actividad-Adivina.png");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-Multimedia .gameQP-GameOver .gameQP-DataImage .gameQP-HistGGame {
+  content: url("exequextwonnew.png");
+  width: 100%;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore {
+  width: 100%;
+  font-size: 1.5em;
+
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore p {
+  position: relative;
+  line-height:0.5em !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore p::before {
+  position: relative;
+  left: -2px;
+  top: 8px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore p[id*="Score"]::before  {
+  margin-right:10px;
+  content: url("crg.puntuacion.svg");
+  background-image: none !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore p[id*="Hits"]::before {
+  margin-right:10px;
+  content: url("crg.aciertos.svg");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore p[id*="Errors"]::before {
+  margin-right:10px;
+  content: url("crg.erros.svg");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-StartGame a {
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 1.25em;
+  text-decoration: none !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-StartGame a:hover {
+  background-color: #3f9cd2;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-DivInstructions {
+  color: #002b4a;
+  font-size: 1em;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-QuestionDiv .gameQP-Prhase .gameQP-Word {
+  gap: 8px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-QuestionDiv .gameQP-Prhase .gameQP-Word .gameQP-Letter {
+  font-size: 3em;
+  padding: 24px;
+  border: 1px solid #007bc4;
+  border-radius: 8px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-QuestionDiv .gameQP-Prhase .gameQP-Word .gameQP-Letter.blue {
+  color: #007bc4;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-QuestionDiv .gameQP-Question {
+  color: #002b4a;
+  font-size: 1.25em;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-QuestionDiv .gameQP-DivReply .exeQuextIcons-MoveOne {
+  content: url("crg.x.svg") !important;
+  width: 48px;
+  height: 48px;
+  background: #e5f2f9;
+  background-image: none;
+  padding: 12px 12px;
+  border: 1px solid #007bc4;
+  border-radius: 8px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-QuestionDiv .gameQP-DivReply .gameQP-EdReply {
+  height: 48px;
+  font-size: 1.5em;
+  border-radius: 4px;
+  border: 1px solid #007bc4;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer .gameQP-QuestionDiv .gameQP-DivReply   .exeQuextIcons-Submit {
+  content: url("crg.actividad.checkmark.blanco.svg");
+  width: 64px;
+  height: 48px;
+  padding: 0px 16px;
+  background: #007bc4;
+  background-image: none;
+  border-radius: 8px;
+}
+
+.candado-MainContainer .candado-GameContainer .candado-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.candado-MainContainer .candado-GameContainer .candado-GameScoreBoard p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+  font-weight: normal;
+}
+
+.candado-MainContainer .candado-GameContainer .candado-GameScoreBoard .exeQuextIcons34-Time {
+  content: url("crg.tempo.svg");
+  height:32px;
+  width:32px;
+  background-image:none;
+}
+
+.candado-MainContainer .candado-GameContainer .candado-GameScoreBoard .exeQuextIcons34-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+  height: auto;
+  width: auto;
+}
+
+.candado-MainContainer .candado-GameContainer .candado-SolutionDiv .candado-Solution {
+  border: 1px solid #007bc4;
+  border-radius: 4px;
+  height: 48px;
+}
+
+.candado-MainContainer .candado-GameContainer .candado-SolutionDiv .candado-SolutionButton {
+  content: url("crg.actividad.checkmark.blanco.svg");
+  width: 64px;
+  height: 48px;
+  padding: 0px 16px;
+  background: #007bc4;
+  background-image: none;
+  border-radius: 8px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-TimeNumber .exeQuextIcons-Time {
+  content: url("crg.tempo.svg");
+  background-image: none;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameScoreBoard .FLCDSP-TimeNumber a {
+  margin-right: 16px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-StartNivelMemory {
+  margin: 32px 0px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-StartNivelMemory a {
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 1.25em;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-StartNivelMemory a:hover {
+  background-color: #3f9cd2;
+}
+
+.FLCDSP-MainContainer .FLCDSP-EText{
+  line-height: 1.25em;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-Multimedia .FLCDSP-CardContainerMemory .FLCDSP-Card1Memory {
+  background: unset;
+  border: unset;
+  border-radius: 16px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-Multimedia .FLCDSP-CardContainerMemory .FLCDSP-Card1Memory .FLCDSP-CardFrontMemory {
+  background: url("Actividad-Cartas-Memoria.png");
+  background-size: contain;
+  border-radius: 16px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-Multimedia .FLCDSP-CardContainerMemory .FLCDSP-Card1Memory .FLCDSP-CardBackMemory {
+  border: 8px solid #002b4a;
+  border-radius: 16px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-Multimedia .FLCDSP-CardContainerMemory .FLCDSP-Card1Memory .FLCDSP-CardBackMemory .FLCDSP-ImageContainMemory .FLCDSP-ImageMemory {
+  -o-object-fit: cover;
+  object-fit: cover;
+  left: unset !important;
+  top: unset !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameOverExt {
+  width: 70%;
+  max-width: 500px;
+  padding-bottom: 24px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameOverExt .FLCDSP-GameOver {
+  margin-bottom: 16px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameOverExt .FLCDSP-GameOver .FLCDSP-DataImage .FLCDSP-HistGGame {
+  content: url("exequextwonnew.png");
+  width: 100%;
+  height: auto;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameOverExt .FLCDSP-GameOver .FLCDSP-DataScore {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameOverExt .FLCDSP-GameOver .FLCDSP-DataScore p {
+  font-weight: bold;
+  background: url("crg.despliegue.doble.negro.svg") no-repeat;
+  background-position: 4px 14px;
+  position: relative;
+  left: 30px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameOverExt .FLCDSP-GameOver .FLCDSP-DataScore p::before {
+  position: relative;
+  left: -32px;
+  top: 8px;
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameOverExt .FLCDSP-GameOver .FLCDSP-DataScore [id^=flcdsOverNumCards]::before {
+  content: url("crg.triangulo.derecha.svg");
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameOverExt .FLCDSP-GameOver .FLCDSP-DataScore [id^=flcdsOverHits]::before {
+  content: url("crg.aciertos.svg");
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameOverExt .FLCDSP-GameOver .FLCDSP-DataScore [id^=flcdsOverScore]::before {
+  content: url("crg.puntuacion.svg");
+}
+
+.FLCDSP-MainContainer .FLCDSP-GameContainer .FLCDSP-GameOverExt .FLCDSP-StartGame a {
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 1.25em;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer {
+  max-width: 750px;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-TimeNumber .exeQuextIcons-Time {
+  content: url("crg.tempo.svg");
+  background-image: none;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-GameScoreBoard .CMPT-TimeNumber a {
+  margin-right: 16px;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-Multimedia input {
+  border-radius: 4px;
+  border: 1px solid #007bc4;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-Multimedia [style*="color: rgb(3, 99, 84)"] {
+  background: #ccff99;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-Multimedia [style*="color: rgb(102, 1, 1);"] {
+  background: #ff9999;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-Message:not(:empty) {
+  color: #002b4a !important;
+  background: #bfdef0;
+  width: 100%;
+  border-radius: 8px;
+  padding: 16px 16px;
+  font-weight: bold;
+  display: flex;
+  line-height:1.6em;
+  gap: 8px;
+  
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-Message:not(:empty)::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: url(crg.despliegue.doble.negro.svg) no-repeat;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-ButtonsDiv .CMPT-ButtonsComands {
+  font: inherit;
+  background: unset;
+  text-shadow: unset;
+  border: none;
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 1.25em;
+}
+
+.CMPT-MainContainer .CMPT-GameContainer .CMPT-ButtonsDiv .CMPT-ButtonsComands:hover {
+  background-color: #3f9cd2;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-GameChallenges {
+  padding: 16px 0px 16px 24px;
+  gap: 16px;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-GameChallenges p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: 1.875em;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-GameChallenges .desafio-LinkDesafio {
+  width: auto;
+  height: auto;
+  content: url("crg.desafio.svg");
+  background-image: none;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-GameChallenges .desafio-LinkChallenge {
+  border-radius: 8px;
+  font-size: 1em;
+  width: auto;
+  height: 1.8em;
+  padding: 2px 12px;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-GameChallenges .desafio-LinkChallenge::before {
+  content: attr(title);
+  text-transform: uppercase;
+  line-height: 2em;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-GameChallenges .desafio-LinkChallenge:has([style$="0px no-repeat; width: 24px; height: 24px;"]) {
+  background: #bfdef0;
+  color: #002b4a;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-GameChallenges .desafio-LinkChallenge:has([style$="-24px no-repeat; width: 24px; height: 24px;"]) {
+  background: #007bc4;
+  color: #ffffff;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-GameChallenges .desafio-LinkChallenge:has([style$="-48px no-repeat; width: 24px; height: 24px;"]) {
+  background: #ccff99;
+  color: #002b4a;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-GameChallenges .desafio-LinkChallenge:has([style$="-72px no-repeat; width: 24px; height: 24px;"]) {
+  background-color: #ff9999;
+  color: #002b4a;
+}
+
+@-moz-document url-prefix() {
+  .desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-GameChallenges .desafio-LinkChallenge {
+    color: #ffffff;
+  }
+}
+
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-GameChallenges .desafio-LinkChallenge .exeQuextRetos {
+  display: none;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-TimeNumber .exeQuextIcons34 {
+  width: auto;
+  height: auto;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-TimeNumber .exeQuextIcons34-Time {
+  content: url("crg.tempo.svg");
+  background-image: none;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-TimeNumber .desafio-LinkMinimize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-TimeNumber .desafio-LinkMinimize .exeQuextIcons34-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+  margin: auto;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-GameScoreBoard .desafio-TimeNumber .exeQuextIcons34-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-Multimedia {
+  width: 75%;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-Multimedia .desafio-Images[src] {
+  content: url("Thumbnail-Actividad-Desafio.png");
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-Title {
+  font-size: 1.25em;
+  padding: 1em 0;
+
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-SolutionDiv label {
+  font-weight: bold;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-SolutionDiv .desafio-Solution {
+  border: 1px solid #007bc4;
+  border-radius: 4px;
+  height: 48px;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-SolutionDiv a {
+  content: url("crg.actividad.checkmark.blanco.svg");
+  width: 64px;
+  height: 48px;
+  padding: 0px 16px;
+  background: #007bc4;
+  background-image: none;
+  border-radius: 8px;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-StartGameDiv .desafio-StartGame {
+  width: auto !important;
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-StartGameDiv .desafio-StartGame:hover {
+  background-color: #3f9cd2;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-DateDiv {
+  color: #002b4a !important;
+  background: #bfdef0;
+  width: 100%;
+  border-radius: 8px;
+  padding: 16px 16px;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-DateDiv p {
+  font-size: 1em;
+}
+
+.desafio-MainContainer .desafio-GameContainer .desafio-DateDiv .desafio-LinkReboot {
+  content: url("crg.reiniciar.svg");
+  background: none;
+}
+.desafio-HistGGame{
+  content: url("exequextwonnew.png");
+  background: none !important;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-GameScores {
+  padding: 16px 0px 16px 24px;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-GameScores .IDFPIcons {
+  width: auto;
+  height: auto;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-GameScores .IDFPIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-GameScores .IDFPIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-GameScores .IDFPIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-GameScores .IDFPIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-TimeNumber {
+  padding: 16px 24px 16px 0px;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-TimeNumber .IDFPIcons {
+  width: auto;
+  height: auto;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-TimeNumber .IDFPIcons-Life {
+  content: url("crg.vidas.svg");
+  background-image: none;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-TimeNumber .IDFPIcons-PointsClue {
+  content: url("crg.puntos.pista.svg");
+  background-image: none;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-TimeNumber .IDFPIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+  margin: auto;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-GameScoreBoard .IDFP-TimeNumber .IDFPIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+  margin-left: 16px;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-Multimedia .IDFP-LinkClue .IDFP-Clue {
+  content: url("crg.pista.svg");
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-Multimedia .IDFP-LinkClue.IDFP-ActivoClue .IDFP-Clue {
+  content: url("crg.pista.usada.svg");
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-ButtonClue .IDFP-BClue {
+  padding-left: 16px;
+  background-color: #007BC4;
+  color: #FFFFFF;
+  border-radius: 8px;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-ButtonClue .IDFP-BClue::before {
+  content: url("crg.pista.ojo.svg");
+  top: 5px;
+  position: relative;
+  margin-right: 8px;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-ButtonClue .IDFP-BClue:hover {
+  background-color: #3f9cd2;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-MessageClue {
+  color: #002B4A !important;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-DivSubmit [id^=idfBtnMoveOn] .exeQuextIcons-MoveOne {
+  content: url("crg.x.svg") !important;
+  width: 48px;
+  height: 48px;
+  background: #e5f2f9;
+  background-image: none;
+  padding: 12px 12px;
+  border: 1px solid #007bc4;
+  border-radius: 8px;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-DivSubmit [id^=idfAnswer] {
+  height: 48px;
+  font-size: 1.5em;
+  border-radius: 4px;
+  border: 1px solid #007bc4;
+}
+
+.IDFP-MainContainer .IDFP-GameContainer .IDFP-DivSubmit [id^=idfSubmit] .exeQuextIcons-Submit {
+  content: url("crg.actividad.checkmark.blanco.svg");
+  width: 64px;
+  height: 48px;
+  padding: 0px 16px;
+  background: #007bc4;
+  background-image: none;
+  border-radius: 8px;
+}
+
+.MQP-MainContainer .MQP-GameContainer .MQP-ToolBar {
+  background-color: #002b4a;
+  border-radius: 8px;
+  padding: 10px 16px 10px 0px;
+  height:var(--height-score );
+}
+
+.MQP-MainContainer .MQP-GameContainer .MQP-ToolBar .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.MQP-MainContainer .MQP-GameContainer .MQP-ToolBar .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.MQP-MainContainer .MQP-GameContainer .MQP-ToolBar .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+
+.MQP-MainContainer .MQP-GameContainer .MQP-ToolBar p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: 1.875em;
+  font-weight: normal;
+}
+
+.MQP-MainContainer .MQP-GameContainer .MQP-ToolBar .exeQuextIcons-MZGame {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.MQP-MainContainer .MQP-GameContainer .MQP-ToolBar .exeQuextIcons-FSGame {
+  content: url("crg.actividad.pantalla.completa.svg");
+  height: auto;
+  width: auto;
+  background-image: none;
+}
+
+.MQP-MainContainer .MQP-GameContainer .MQP-Multimedia .MQP-Point[style^='display: block; background-image: url("mapam60.svg");'] {
+  content: url("crg.icono.lupa.svg");
+  background-image: none !important;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+.MQP-MainContainer a.MPQ-OptionTest{
+  background-color:#007BC4 !important;
+  color:#FFFFFF !important;
+  font-size:1.1em !important;
+}
+.MQP-MainContainer .exeQuextIcons-CWGame{
+background-image: url(crg.cerrar.popup.svg) !important;
+}
+.MQP-MainContainer .MQP-GameContainer .MQP-Multimedia .MQP-Detail {
+  border-radius: 16px;
+  box-shadow: 0px 4px 25px rgba(0, 43, 74, 0.3019607843);
+}
+
+.MQP-MainContainer .MQP-GameContainer .MQP-Multimedia .MQP-Detail .MQP-LinkDetailClose {
+  width: 32px;
+  height: 32px;
+}
+
+.MQP-MainContainer .MQP-GameContainer .MQP-Multimedia .MQP-Detail .MQP-LinkDetailClose .exeQuextIcons-CWGame {
+  content: url("crg.x.svg");
+  width: 32px;
+  height: 32px;
+  background-image: none;
+}
+.MQP-MainContainer .MQP-Test{
+  top:61px !important;
+  height:auto !important;
+}
+.MQP-MainContainer .exeQuextIcons-Score{
+  content: url("crg.puntuacion.svg");
+  background-image: none !important;
+}
+.MQP-MainContainer .exeQuextIcons-Number{
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none !important;
+}
+.MQP-MainContainer .exeQuextIcons-Hit{
+  content: url("crg.aciertos.tabla.svg");
+  background-image: none !important;
+}
+.MQP-MainContainer .exeQuextIcons-Error{
+  content: url("crg.erros.svg");
+  background-image: none !important;
+}
+.MQP-GOScoreButtons a{
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 8px;
+  margin-left:6px;
+  color: #ffffff;
+  font-size: 1.25em;
+  line-height:0.7em;
+  text-decoration: none !important;
+}
+.MQP-MessageMoScoreData{
+  font-size: 1.1em;
+  color: #002B4A !important;
+}
+div:-webkit-full-screen .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.min.svg") !important;
+  background-image: none;
+}
+
+div:fullscreen .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.min.svg") !important;
+  background-image: none;
+}
+
+div:-webkit-full-screen .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.min.svg") !important;
+  background-image: none;
+}
+
+div:-moz-full-screen .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.min.svg") !important;
+  background-image: none;
+}
+
+.MTHO-MainContainer {
+  max-width: 800px !important;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer {
+  max-width: 800px;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-TimeNumber .exeQuextIcons-Time {
+  content: url("crg.tempo.svg");
+  background-image: none;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-GameScoreBoard .MTHO-TimeNumber a {
+  margin-right: 16px;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia .MTHO-Form p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia .MTHO-Form p label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia .MTHO-Form p label .operandA,
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia .MTHO-Form p label .operation,
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia .MTHO-Form p label .operandB {
+  color: #002b4a;
+  padding-top: 5px;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia .MTHO-Form p .operationResult {
+  display: block;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia .MTHO-Form p .operationResult input {
+  height: 100%;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid #007bc4;
+  padding-top: 5px;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia .MTHO-Form p input[id$=submit] {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia .MTHO-pagination {
+  visibility: hidden;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia .MTHO-pagination a {
+  visibility: hidden !important;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table {
+  border: none;
+  border-collapse: collapse;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table thead {
+  border: none;
+  color: #002b4a;
+  font-weight: bold;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table thead tr {
+  border-bottom: 1px solid #002b4a !important;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table thead tr th {
+  border: none;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table thead tr th:first-child {
+  padding-left: 32px;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table tbody tr {
+  background-color: #e5f2f9;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table tbody tr:not(:last-child) {
+  border-bottom: 1px solid #80bde1;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table tbody tr.MTHO-tr-right td {
+  background: #edffdb;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table tbody tr.MTHO-tr-wrong td {
+  background: #ffdbdb;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table tbody tr td {
+  background-color: unset;
+  border: none;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table tbody tr td:first-child {
+  padding-left: 32px;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table tbody tr td a {
+  color: #002b4a !important;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table tbody tr td .MTHO-right {
+  content: url("crg.aciertos.tabla.svg");
+  background-image: none;
+  width: 24px;
+  height: 24px;
+  margin: 0 10%;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Multimedia table tbody tr td .MTHO-wrong {
+  content: url("crg.erros.tabla.svg");
+  background-image: none;
+  width: 24px;
+  height: 24px;
+  margin: 0 10%;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Summary {
+  color: #002b4a !important;
+  background: #bfdef0;
+  width: 100%;
+  height: 64px;
+  border-radius: 8px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Summary::before {
+  content: url("crg.despliegue.doble.negro.svg");
+  position: relative;
+  left: 10px;
+  top: 0px;
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Summary ul {
+  width: 95%;
+  margin-left: 4px;
+  font-size: 0.8em;
+  justify-content: space-evenly !important;
+  margin-top:-2px;
+  
+}
+
+.MTHO-MainContainer .MTHO-GameContainer .MTHO-Summary ul li{
+  margin-bottom: 0px !important;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-TimeNumber .exeQuextIcons-Time {
+  content: url("crg.tempo.svg");
+  background-image: none;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-GameScoreBoard .MTHP-TimeNumber a {
+  margin-right: 16px;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-Flex .MTHP-ImagesHome {
+  content: url("Thumbnail-Actividad-Problemas matematicas.png");
+  max-width: unset;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-StartGame a {
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 1.25em;
+  text-decoration: none !important;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-StartGame a:hover {
+  background-color: #3f9cd2;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-DivReply [id^=mthpBtnMoveOn] .exeQuextIcons-MoveOne {
+  content: url("crg.x.svg") !important;
+  width: 48px;
+  height: 48px;
+  background: #e5f2f9;
+  background-image: none;
+  padding: 12px 12px;
+  border: 1px solid #007bc4;
+  border-radius: 8px;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-DivReply .MTHP-EdReply {
+  height: 48px;
+  font-size: 2em;
+  border-radius: 4px;
+  border: 1px solid #007bc4;
+  max-width: 310px;
+}
+
+.MTHP-MainContainer .MTHP-GameContainer .MTHP-DivReply [id^=mathBtnReply] .exeQuextIcons-Submit {
+  content: url("crg.actividad.checkmark.blanco.svg");
+  width: 64px;
+  height: 48px;
+  padding: 0px 16px;
+  background: #007bc4;
+  background-image: none;
+  border-radius: 8px;
+}
+
+.gameQP-MainContainer {
+  margin: 1em 0;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] {
+  margin: 1em 0;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-Time {
+  content: url("crg.tempo.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber a {
+  margin-right: 16px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-Multimedia {
+  width: 75%;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-Multimedia img.gameQP-Cover {
+  content: url("Thumbnail-Actividad-QuExt.png");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataImage .gameQP-HistGGame {
+  content: url("exequextwonnew.png");
+  width: 100%;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore p {
+  position: relative;
+  left: 30px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore [id^=quextOverScore]::before {
+  content: url("crg.puntuacion.svg");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore [id^=quextOverHits]::before {
+  content: url("crg.aciertos.svg");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore [id^=quextOverErrors]::before {
+  content: url("crg.erros.svg");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-StartGame a, RLCP-Buttons a {
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 1.25em;
+  text-decoration: none !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-StartGame a:hover , RLCP-Buttons a:hover  {
+  background-color: #007bc4;
+  background-color: #3f9cd2;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-DivInstructions {
+  color: #002b4a;
+  font-size: 1.25em;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options {
+  color: #002b4a !important;
+  background-color: #e5f2f9 !important;
+  border: 1px solid #007bc4 !important;
+  border-radius: 8px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style^="border-color: rgb(0, 255, 0);"] {
+  color: #002b4a !important;
+  background-color: #ccff99 !important;
+  border: 1px solid #007bc4 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style^="border-color: rgb(217, 217, 217);"] {
+  color: #002b4a !important;
+  background-color: #ff9999 !important;
+  border: 1px solid #007bc4 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=quextGameContainer] .gameQP-QuestionDiv .gameQP-Question {
+  color: #002b4a;
+  font-size: 1.25em;
+}
+
+.rosco-MainContainer .rosco-GameContainer {
+  max-width: 485px;
+  /*
+  .rosco-Messages{
+      p{
+          &[style^="color: rgb(51, 51, 51);"]{
+              &::before {
+                  content: url("crg.despliegue.doble.negro.svg");
+                  position: relative;
+                  left: -4px;
+                  top: 5%;
+              }
+
+              color: #002b4a !important;
+              background: #bfdef0;
+              width: 100%;
+              height: 64px;
+              border-radius: 8px;
+              margin-top: 24px;
+              padding-left: 24px;
+              display: flex;
+              align-items: center;
+              font-weight: bold; 
+
+          }
+      }
+  }
+  */
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: 1.875em;
+  font-weight: normal !important;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: 1.875em;
+  font-weight: normal !important;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber .exeQuextIcons-Time {
+  content: url("crg.tempo.svg");
+  background-image: none;
+  display: unset !important;
+  order: 1;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber .rosco-PTime {
+  order: 1;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber .rosco-LinkTypeGame {
+  order: 2;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber .rosco-LinkTypeGame .exeQuextIcons-RoscoCanvas {
+  content: url("crg.ocultar.rosco.svg");
+  background-image: none;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber .rosco-LinkTypeGame .exeQuextIcons-RoscoRows {
+  content: url("crg.mostrar.rosco.svg");
+  background-image: none;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber .rosco-LinkArrowMinimize {
+  order: 3;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber .rosco-LinkArrowMinimize .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber .rosco-LinkFullScreen {
+  order: 3;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber .rosco-LinkFullScreen .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-GameScoreBoard .rosco-TimeNumber a {
+  margin-right: 16px;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-Letters {
+  margin-top: 90px;
+  width: 485px;
+  justify-content: center;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-Letters .rosco-Letter {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-Letters .rosco-Letter[style^="background-color: rgb(88, 119, 198);"] {
+  background-color: #007BC4 !important;
+  color: #FFFFFF !important;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-Letters .rosco-Letter[style^="background-color: rgb(249, 249, 249);"] {
+  background-color: #E5F2F9 !important;
+  color: #FFFFFF !important;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-Letters .rosco-Letter[style^="background-color: rgb(243, 213, 90);"] {
+  background-color: #FFF899 !important;
+  color: #002B4A !important;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-Letters .rosco-Letter[style^="background-color: rgb(179, 9, 47);"] {
+  background-color: #FF9999 !important;
+  color: #002B4A !important;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-Letters .rosco-Letter[style^="background-color: rgb(0, 163, 0);"] {
+  background-color: #CCFF99 !important;
+  color: #002B4A !important;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-Multimedia::before {
+  padding-top: 0px;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-Multimedia:has(img.rosco-NoImage[style$="none;"])::before {
+  padding-top: 56%;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-Messages {
+  display: none !important;
+}
+.rosco-MainContainer .rosco-GameContainer .rosco-StartGame {
+padding-bottom:10px;
+}
+.rosco-MainContainer .rosco-GameContainer .rosco-StartGame a {
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 1.25em;
+  text-decoration: none !important;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-StartGame a:hover {
+  background-color: #3f9cd2;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-QuestionDiv .rosco-TypeDefinition {
+  color: #333333;
+  font-size: 1.2em;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-QuestionDiv .rosco-DivReply [id^=roscoBtnMoveOn] .exeQuextIcons-MoveOne {
+  content: url("crg.x.svg") !important;
+  width: 48px;
+  height: 48px;
+  background: #e5f2f9;
+  background-image: none;
+  padding: 12px 12px;
+  border: 1px solid #007bc4;
+  border-radius: 8px;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-QuestionDiv .rosco-DivReply .rosco-EdReply {
+  height: 48px;
+  font-size: 1.5em;
+  border-radius: 4px;
+  border: 1px solid #007bc4;
+}
+
+.rosco-MainContainer .rosco-GameContainer .rosco-QuestionDiv .rosco-DivReply [id^=roscoBtnReply] .exeQuextIcons-Submit {
+  content: url("crg.actividad.checkmark.blanco.svg");
+  width: 64px;
+  height: 48px;
+  padding: 0px 16px;
+  background: #007bc4;
+  background-image: none;
+  border-radius: 8px;
+}
+
+.rosco-MainContainer .rosco-Game {
+  padding-top: 75px;
+}
+
+.rosco-MainContainer .rosco-Game .rosco-Canvas {
+  width: 360px;
+  height: 360px;
+}
+.rosco-MainContainer .rosco-ImageNeo{
+  margin-top:10px;
+}
+.rosco-WordsClose{
+background-color: #007bc4 !important;
+}
+
+.gameQP-MainContainer {
+  margin: 1em 0;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] {
+  margin: 1em 0;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: 1.875em;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: 1.875em;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-Time {
+  content: url("crg.tempo.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber a {
+  margin-right: 16px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-Multimedia {
+  width: 75%;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-Multimedia img.gameQP-Cover {
+  content: url("Thumbnail-Actividad-Selecciona.png");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataImage .gameQP-HistGGame {
+  content: url("exequextwonnew.png");
+  width: 100%;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore p::before {
+  position: relative;
+  left: -2px;
+  top: 8px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore [id^=seleccionaOverScore]::before {
+  content: url("crg.puntuacion.svg");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore [id^=seleccionaOverHits]::before {
+  content: url("crg.aciertos.svg");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore [id^=seleccionaOverErrors]::before {
+  content: url("crg.erros.svg");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-StartGame a {
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 1.25em;
+  text-decoration: none !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-StartGame a:hover {
+  background-color: #3f9cd2;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-DivInstructions {
+  color: #002b4a;
+  font-size: 1.25em;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options {
+  color: #002b4a !important;
+  background-color: #ffffff !important;
+  border: 2px solid;
+  border-radius: 8px;
+  line-height: 1.25em;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style^="border-color: rgb(179, 9, 47);"] {
+  border-color: #ff9999 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style^="border-color: rgb(88, 119, 198);"] {
+  border-color: #3f9cd2 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style^="border-color: rgb(0, 163, 0);"] {
+  border-color: #ccff99 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style^="border-color: rgb(243, 213, 90);"] {
+  border-color: #fff899 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style$="background-color: rgb(179, 9, 47); cursor: pointer; color: rgb(255, 255, 255);"] {
+  background-color: #ff9999 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style$="background-color: rgb(88, 119, 198); cursor: pointer; color: rgb(255, 255, 255);"] {
+  background-color: #3f9cd2 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style$="background-color: rgb(0, 163, 0); cursor: pointer; color: rgb(255, 255, 255);"] {
+  background-color: #ccff99 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style$="background-color: rgb(243, 213, 90); cursor: pointer; color: rgb(255, 255, 255);"] {
+  background-color: #fff899 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style^="border-color: rgb(0, 255, 0);"] {
+  background-color: #ccff99 !important;
+  border-color: #ccff99 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style^="border-color: rgb(217, 217, 217);"] {
+  border-color: #002b4a !important;
+  border-width: 2px !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-QuestionDiv .gameQP-Question {
+  color: #002b4a;
+  font-size: 1.25em;
+  line-height: 1.25em;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-BottonContainerDiv {
+  justify-content: center;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-BottonContainerDiv .gameQP-AnswersDiv .gameQP-Answers {
+  width: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-BottonContainerDiv .gameQP-AnswersDiv .gameQP-Answers .gameQP-AnswersOptions {
+  border: 2px solid #007bc4;
+  width: 32px;
+  height: 32px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-BottonContainerDiv .gameQP-AnswersDiv .gameQP-Answers .gameQP-Answer1 {
+  background-color: #ff9999;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-BottonContainerDiv .gameQP-AnswersDiv .gameQP-Answers .gameQP-Answer2 {
+  background-color: #3f9cd2;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-BottonContainerDiv .gameQP-AnswersDiv .gameQP-Answers .gameQP-Answer3 {
+  background-color: #ccff99;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-BottonContainerDiv .gameQP-AnswersDiv .gameQP-Answers .gameQP-Answer4 {
+  background-color: #fff899;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=seleccionaGameContainer] .gameQP-BottonContainerDiv .gameQP-AnswersDiv a .exeQuextIcons-Submit {
+  background-image: none;
+  content: url("crg.check.azul.svg");
+  width: auto;
+  height: auto;
+}
+
+.SPP-MainContainer {
+  height: 100% !important;
+}
+
+.SPP-MainContainer #sopaMessage[style^="color: rgb(3, 99, 84)"],
+.SPP-MainContainer #sopaMessage[style^="color: rgb(102, 1, 1);"] {
+  color: #002b4a !important;
+  background: #bfdef0;
+  width: 100%;
+  height: 64px;
+  border-radius: 8px;
+  margin-top: 24px;
+  padding-left: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.SPP-MainContainer #sopaMessage[style^="color: rgb(3, 99, 84)"]::before,
+.SPP-MainContainer #sopaMessage[style^="color: rgb(102, 1, 1);"]::before {
+  content: url("crg.despliegue.doble.negro.svg");
+  position: relative;
+  left: -4px;
+  margin-right:6px;
+  top: 0;
+}
+
+.SPP-MainContainer .SPP-GameContainer {
+  height: 100% !important;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-GameScoreBoard .SPP-TimeNumber a {
+  margin-right: 16px;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-Multimedia .SPP-Puzzle {
+  border: 2px solid #007bc4;
+  border-radius: 8px;
+}
+
+@media only screen and (min-width: 600px) {
+  .SPP-MainContainer .SPP-GameContainer .SPP-Multimedia .SPP-Puzzle .SPP-PuzzleSquare {
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 2rem;
+  }
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-Multimedia .SPP-Puzzle .complete {
+  background-color: #ccff99;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-Multimedia .SPP-Puzzle .selected {
+  background-color: #80bde1;
+  color: #ffffff;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-Multimedia .SPP-Puzzle .found {
+  color: #007bc4;
+  font-weight: bold;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-Multimedia .SPP-Words .Sopa-Li .SPP-LinkImage .SopaIcons {
+  background-image: none;
+  content: url("crg.icono.lupa.sinfondo.svg");
+  width: 100%;
+  height: auto;
+  filter: none;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-Multimedia .SPP-Words .Sopa-Li span {
+  font-family: "Atkinson", ​Arial, Helvetica, sans-serif;
+  color: #002b4a;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-Multimedia .SPP-Words .Sopa-Li span:first-of-type {
+  font-weight: bold;
+}
+
+.SPP-MainContainer .SPP-GameContainer #sopaResolve {
+  position: relative;
+  left: 25%;
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 1.25em;
+  text-decoration: none !important;
+  border: none;
+}
+
+.SPP-MainContainer .SPP-GameContainer #sopaResolve:hover {
+  background-color: #3f9cd2;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-Cubierta {
+  height: 100% !important;
+}
+
+.SPP-MainContainer .SPP-GameContainer .SPP-Cubierta .SPP-Detail .SPP-Flex .SPP-LinkClose .exeQuextIcons-CWGame {
+  background-image: none;
+  content: url("crg.x.svg");
+  width: 50%;
+  height: auto;
+  left: 10px;
+}
+
+.trivial-MainContainer {
+  max-width: 800px !important;
+  width: 100% !important;
+  padding: 0px !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer {
+  max-width: 800px;
+  width: 100%;
+}
+
+div:fullscreen .trivial-Tablero{
+  max-width: 95vmin !important;
+  width: 95vmin !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-ImageTablero[src$="tvltv2.png"] {
+  content: url("Trivial2Temas.png");
+}
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-ImageTablero[src$="tvltv3.png"] {
+  content: url("Trivial3Temas.png");
+}
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-ImageTablero[src$="tvltv4.png"] {
+  content: url("Trivial4Temas.png");
+}
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-ImageTablero[src$="tvltv5.png"] {
+  content: url("Trivial5Temas.png");
+}
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-ImageTablero[src$="tvltv6.png"] {
+  content: url("Trivial6Temas.png");
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-LinkFullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-LinkMinimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-LinkReboot {
+  content: url("crg.reiniciar.svg");
+  background-image: none;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-CasillaDestino {
+  background-image: url("tlv-Trivial-Destino.svg");
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers {
+  box-shadow: 0px 4px 25px rgba(0, 43, 74, 0.3019607843);
+  border-radius: 16px;
+  width: 100%;
+  height: 70%;
+  padding: 24px;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NumberGamers p {
+  font-size: 1em !important;
+  color: #002b4a;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NumberGamers .trivial-NumberIcon {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NumberGamers .trivial-NumberIcon::before {
+  content: attr(data-number);
+  color: #007bc4;
+  font-size: 2em;
+  position: absolute;
+  left: 8px;
+  top: 10px;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NumberGamers .trivial-NumberIcon img[src$="tvlcb1.png"] {
+  -o-object-position: -99999px 99999px;
+  object-position: -99999px 99999px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #007bc4;
+  border-radius: 4px;
+  background-color: #e5f2f9;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NumberGamers .trivial-NumberIcon img[src$="tvlcr1.png"] {
+  -o-object-position: -99999px 99999px;
+  object-position: -99999px 99999px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #007bc4;
+  border-radius: 4px;
+  background-color: #ff9999;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NumberGamers .trivial-NumberIcon img[src$="tvlcb2.png"] {
+  -o-object-position: -99999px 99999px;
+  object-position: -99999px 99999px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #007bc4;
+  border-radius: 4px;
+  background-color: #e5f2f9;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NumberGamers .trivial-NumberIcon img[src$="tvlcr2.png"] {
+  -o-object-position: -99999px 99999px;
+  object-position: -99999px 99999px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #007bc4;
+  border-radius: 4px;
+  background-color: #3f9cd2;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NumberGamers .trivial-NumberIcon img[src$="tvlcb3.png"] {
+  -o-object-position: -99999px 99999px;
+  object-position: -99999px 99999px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #007bc4;
+  border-radius: 4px;
+  background-color: #e5f2f9;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NumberGamers .trivial-NumberIcon img[src$="tvlcr3.png"] {
+  -o-object-position: -99999px 99999px;
+  object-position: -99999px 99999px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #007bc4;
+  border-radius: 4px;
+  background-color: #ccff99;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NumberGamers .trivial-NumberIcon img[src$="tvlcb4.png"] {
+  -o-object-position: -99999px 99999px;
+  object-position: -99999px 99999px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #007bc4;
+  border-radius: 4px;
+  background-color: #e5f2f9;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NumberGamers .trivial-NumberIcon img[src$="tvlcr4.png"] {
+  -o-object-position: -99999px 99999px;
+  object-position: -99999px 99999px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #007bc4;
+  border-radius: 4px;
+  background-color: #fff899;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NameGamers {
+  margin-bottom: 2.5em;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NameGamers .trivial-JugadorData .trivial-FichaJugador {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-NameGamers .trivial-JugadorData .trivial-NameGamer {
+  height: 32px !important;
+  font-size: 1.25em !important;
+  color: #002b4a;
+  border: 1px solid #007bc4;
+  border-radius: 8px;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-StartGame {
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px !important;
+  color: #ffffff;
+  font-size: 1em !important;
+  font-weight: normal;
+  text-decoration: none !important;
+  width: auto;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-SelectsGamers .trivial-StartGame:hover {
+  background-color: #3f9cd2;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Message {
+  opacity: unset;
+  box-shadow: 0px 4px 25px rgba(0, 43, 74, 0.3019607843);
+  border-radius: 16px;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Message .trivial-MessageImage[src$="tvlfr.png"] {
+  content: url("Trivial-Ficha-JugadorRojo.svg");
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Message .trivial-MessageImage[src$="tvlfb.png"] {
+  content: url("Trivial-Ficha-JugadorAzul.svg");
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Message .trivial-MessageImage[src$="tvlfg.png"] {
+  content: url("Trivial-Ficha-JugadorVerde.svg");
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Message .trivial-MessageImage[src$="tvlfy.png"] {
+  content: url("Trivial-Ficha-JugadorAmarillo.svg");
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Message p {
+  color: #002b4a;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Dado .trivial-FondoDado {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137) !important;
+  border-radius: 10px !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Dado .trivial-FondoDado[style^="background-color: rgb(244, 67, 54);"] {
+  background-color: #ff9999 !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Dado .trivial-FondoDado[style^="background-color: rgb(4, 69, 143);"] {
+  background-color: #3f9cd2 !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Dado .trivial-FondoDado[style^="background-color: rgb(0, 175, 128);"] {
+  background-color: #ccff99 !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Dado .trivial-FondoDado[style^="background-color: rgb(255, 206, 0);"] {
+  background-color: #fff899 !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Dado .trivialClick .trivial-ManoDado {
+  background-color: unset !important;
+  background-image: none !important;
+  content: url("button_C26.svg");
+  width: 75%;
+  height: auto;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-Tablero .trivial-Dado .trivialClick .trivial-ManoDado:hover {
+  content: url("button_C27.svg");
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-JugadorRojo {
+  background-image: url("Trivial-Ficha-JugadorRojo.svg");
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-JugadorAzul {
+  background-image: url("Trivial-Ficha-JugadorAzul.svg");
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-JugadorVerde {
+  background-image: url("Trivial-Ficha-JugadorVerde.svg");
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-JugadorAmarillo {
+  background-image: url("Trivial-Ficha-JugadorAmarillo.svg");
+}
+
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores {
+  width: 16em !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-JugadoresMochila:first-child {
+  width: 32px;
+  height: 32px;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Queso {
+  width: 26px;
+  height: 26px;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Puntos {
+  font-size: 1.25em !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q1 {
+  border-color: #ff9999;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q1[style^="background-color: rgb(244, 67, 54)"] {
+  background-color: #ff9999 !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q2 {
+  border-color: #ccff99;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q2[style^="background-color: rgb(148, 229, 120)"] {
+  background-color: #ccff99 !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q3 {
+  border-color: #66DFFF;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q3[style^="background-color: rgb(158, 188, 236)"] {
+  background-color: #66DFFF !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q4 {
+  border-color: #FFF12F;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q4[style^="background-color: rgb(241, 243, 112)"] {
+  background-color: #FFF12F !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q5 {
+  border-color: #D6ACFF;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q5[style^="background-color: rgb(226, 185, 238)"] {
+  background-color: #D6ACFF !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q6 {
+  border-color: #FFBF4D;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Jugadores .trivial-Jugador .trivial-Q6[style^="background-color: rgb(251, 189, 93)"] {
+  background-color: #FFBF4D !important;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Materias .trivial-Materia .trivial-M1 {
+  width: 32px;
+  height: 32px;
+  background-color: #ff9999;
+  border-color: #ff9999;
+  border-radius: 4px;
+  padding: 14px;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Materias .trivial-Materia .trivial-M2 {
+  width: 32px;
+  height: 32px;
+  background-color: #ccff99;
+  border-color: #ccff99;
+  border-radius: 4px;
+  padding: 14px;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Materias .trivial-Materia .trivial-M3 {
+  width: 32px;
+  height: 32px;
+  background-color: #66DFFF;
+  border-color: #66DFFF;
+  border-radius: 4px;
+  padding: 14px;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Materias .trivial-Materia .trivial-M4 {
+  width: 32px;
+  height: 32px;
+  background-color: #FFF12F;
+  border-color: #FFF12F;
+  border-radius: 4px;
+  padding: 14px;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Materias .trivial-Materia .trivial-M5 {
+  width: 32px;
+  height: 32px;
+  background-color: #D6ACFF;
+  border-color: #D6ACFF;
+  border-radius: 4px;
+  padding: 14px;
+}
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Materias .trivial-Materia .trivial-M6 {
+  width: 32px;
+  height: 32px;
+  background-color: #FFBF4D;
+  border-color: #FFBF4D;
+  border-radius: 4px;
+  padding: 14px;
+}
+
+
+
+.trivial-MainContainer .trivial-GameContainer .trivial-PanelLateral .trivial-Materias .trivial-Materia .trivial-MateriaNombre {
+  font-size: 1em !important;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options {
+  color: #002b4a !important;
+  font-size: 1em;
+  background-color: #ffffff !important;
+  border: 2px solid;
+  border-radius: 8px;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style^="border-color: rgb(179, 9, 47);"] {
+  border-color: #ff9999 !important;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style^="border-color: rgb(88, 119, 198);"] {
+  border-color: #3f9cd2 !important;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style^="border-color: rgb(0, 163, 0);"] {
+  border-color: #ccff99 !important;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style^="border-color: rgb(243, 213, 90);"] {
+  border-color: #fff899 !important;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style$="background-color: rgb(179, 9, 47); cursor: pointer; color: rgb(255, 255, 255);"],
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style$="border-color: rgb(28, 27, 27); background-color: rgb(179, 9, 47); cursor: default; color: rgb(255, 255, 255);"] {
+  border-color: #ff9999 !important;
+  background-color: #ff9999 !important;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style$="background-color: rgb(88, 119, 198); cursor: pointer; color: rgb(255, 255, 255);"],
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style$="border-color: rgb(28, 27, 27); background-color: rgb(88, 119, 198); cursor: default; color: rgb(255, 255, 255);"] {
+  border-color: #3f9cd2 !important;
+  background-color: #3f9cd2 !important;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style$="background-color: rgb(0, 163, 0); cursor: pointer; color: rgb(255, 255, 255);"],
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style$="border-color: rgb(28, 27, 27); background-color: rgb(0, 163, 0); cursor: default; color: rgb(255, 255, 255);"] {
+  border-color: #ccff99 !important;
+  background-color: #ccff99 !important;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style$="background-color: rgb(243, 213, 90); cursor: pointer; color: rgb(255, 255, 255);"],
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style$="border-color: rgb(28, 27, 27); background-color: rgb(243, 213, 90); cursor: default; color: rgb(255, 255, 255);"] {
+  border-color: #fff899 !important;
+  background-color: #fff899 !important;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style^="border-color: rgb(0, 255, 0);"] {
+  background-color: #ccff99 !important;
+  border-color: #ccff99 !important;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-OptionsDiv .trivial-Options[style^="border-color: rgb(217, 217, 217);"] {
+  border-color: #002b4a !important;
+  border-width: 2px !important;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-QuestionDiv .trivial-Question {
+  color: #002b4a;
+  font-size: 1.25em;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-BottonContainerDiv {
+  justify-content: center;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-BottonContainerDiv .trivial-AnswersDiv .trivial-Answers {
+  width: auto;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-BottonContainerDiv .trivial-AnswersDiv .trivial-Answers .trivial-AnswersOptions {
+  border: 2px solid #007bc4;
+  width: 32px;
+  height: 32px;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-BottonContainerDiv .trivial-AnswersDiv .trivial-Answers .trivial-Answer1 {
+  background-color: #ff9999;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-BottonContainerDiv .trivial-AnswersDiv .trivial-Answers .trivial-Answer2 {
+  background-color: #3f9cd2;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-BottonContainerDiv .trivial-AnswersDiv .trivial-Answers .trivial-Answer3 {
+  background-color: #ccff99;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-BottonContainerDiv .trivial-AnswersDiv .trivial-Answers .trivial-Answer4 {
+  background-color: #fff899;
+}
+
+.trivial-MainContainer .trivial-GameQuestion .trivial-BottonContainerDiv .trivial-AnswersDiv a .exeQuextIcons-Submit {
+  background-image: none;
+  content: url("crg.actividad.checkmark.blanco.svg");
+  width: auto;
+  height: auto;
+}
+
+.gameQP-MainContainer {
+  margin: 1em 0;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] {
+  margin: 1em 0;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-Time {
+  content: url("crg.tempo.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-GameScoreBoard .gameQP-TimeNumber a {
+  margin-right: 16px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-Multimedia {
+  width: 75%;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-Multimedia img.gameQP-Images {
+  content: url("Thumbnail-Actividad-Video QuExt.png");
+  width: 100% !important;
+  height: auto !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataImage .gameQP-HistGGame {
+  content: url("exequextwonnew.png");
+  width: 100%;
+  height: auto;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore p {
+  background: url("crg.despliegue.doble.negro.svg") no-repeat;
+  background-position: 7px 14px;
+  position: relative;
+  left: 30px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore p::before {
+  position: relative;
+  left: -32px;
+  top: 8px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore [id^=vquextOverScore]::before {
+  content: url("crg.puntuacion.svg");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore [id^=vquextOverHits]::before {
+  content: url("crg.aciertos.svg");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-Multimedia .gameQP-GameOver .gameQP-DataScore [id^=vquextOverErrors]::before {
+  content: url("crg.erros.svg");
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-StartGame a {
+  background-color: #007bc4;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-size: 1.25em;
+  text-decoration: none !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-StartGame a:hover {
+  background-color: #3f9cd2;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options {
+  color: #002b4a !important;
+  background-color: #e5f2f9 !important;
+  border: 1px solid #007bc4 !important;
+  border-radius: 8px;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style^="border-color: rgb(0, 255, 0);"] {
+  color: #002b4a !important;
+  background-color: #ccff99 !important;
+  border: 1px solid #007bc4 !important;
+}
+
+.gameQP-MainContainer .gameQP-GameContainer[id^=vquextGameContainer] .gameQP-QuestionDiv .gameQP-OptionsDiv .gameQP-Options[style^="border-color: rgb(217, 217, 217);"] {
+  color: #002b4a !important;
+  background-color: #ff9999 !important;
+  border: 1px solid #007bc4 !important;
+}
+
+ .desafio-LinkChallenge::before{
+   line-height:1.7em !important;
+ }
+ .CTJP-Capture a{
+   background: #007BC4 !important;
+  border-radius: 8px !important;
+  color: #FFFFFF;
+  border: 0px;
+  margin: 5px 5px 5px 0px;
+  padding: 10px 16px !important;
+  font-size:1.15em;
+ }
+  .INFMP-LinksInforme a{
+   background: #007BC4 !important;
+  border-radius: 8px !important;
+  color: #FFFFFF;
+  border: 0px;
+  margin: 5px 5px 5px 0px;
+  padding: 10px 16px !important;
+  font-size:1.15em;
+  line-height:1em;
+ }
+ .INFMP-Title {
+   background-color: #002B4A !important; 
+}
+.INFMP-GameScore {
+   background-color: #002B4A !important; 
+ }
+
+.CQP-MainContainer {
+  height: 100% !important;
+}
+
+
+.CQP-MainContainer .CQP-GameContainer {
+  height: 100% !important;
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+} 
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.CQP-MainContainer .CQP-GameContainer .CQP-GameScoreBoard .CQP-TimeNumber a {
+  margin-right: 16px;
+}
+.DescubreQP-MainContainer {
+  height: 100% !important;
+}
+
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer {
+  height: 100% !important;
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+} 
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.DescubreQP-MainContainer .DescubreQP-GameContainer .DescubreQP-GameScoreBoard .DescubreQP-TimeNumber a {
+  margin-right: 16px;
+}
+.RLCP-MainContainer {
+  height: 100% !important;
+}
+
+
+.RLCP-MainContainer .RLCP-GameContainer {
+  height: 100% !important;
+}
+
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard .RLCP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard .RLCP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard .RLCP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard .RLCP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard .RLCP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard .RLCP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard .RLCP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+} 
+
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard .RLCP-TimeNumber {
+
+}
+
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard .RLCP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;;
+}
+
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard .RLCP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+
+.RLCP-GameContainer .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none !important;
+}
+.RLCP-MainContainer  .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none !important;
+}
+.RLCP-MainContainer .RLCP-GameContainer .RLCP-GameScoreBoard .RLCP-TimeNumber a {
+  margin-right: 16px;
+}
+.ODNP-MainContainer {
+  height: 100% !important;
+}
+
+
+.ODNP-MainContainer .ODNP-GameContainer {
+  height: 100% !important;
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+} 
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.ODNP-MainContainer .ODNP-GameContainer .ODNP-GameScoreBoard .ODNP-TimeNumber a {
+  margin-right: 16px;
+}
+.SLCMP-MainContainer {
+  height: 100% !important;
+}
+
+
+.SLCMP-MainContainer .SLCMP-GameContainer {
+  height: 100% !important;
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+} 
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.SLCMP-MainContainer .SLCMP-GameContainer .SLCMP-GameScoreBoard .SLCMP-TimeNumber a {
+  margin-right: 16px;
+}
+.VQXTP-MainContainer {
+  height: 100% !important;
+}
+
+
+.VQXTP-MainContainer .VQXTP-GameContainer {
+  height: 100% !important;
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard {
+  background-color: #002b4a;
+  border-radius: 8px;
+  height:var(--height-score );
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-GameScores {
+  padding: 16px 0px 16px 16px;
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-GameScores p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-GameScores .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-GameScores .exeQuextIcons-Number {
+  content: url("crg.triangulo.derecha.svg");
+  background-image: none;
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-GameScores .exeQuextIcons-Hit {
+  content: url("crg.aciertos.svg");
+  background-image: none;
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-GameScores .exeQuextIcons-Score {
+  content: url("crg.puntuacion.svg");
+  background-image: none;
+}
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-GameScores .exeQuextIcons-Error {
+  content: url("crg.erros.svg");
+  background-image: none;
+} 
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-TimeNumber {
+  padding: 16px 16px 16px 0px;
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-TimeNumber p {
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #ffffff;
+  font-size: var( --text-score-font ) !important;
+  padding: var( --text-score-padding ) !important;
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-TimeNumber .exeQuextIcons {
+  width: auto;
+  height: auto;
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-TimeNumber .exeQuextIcons-Minimize {
+  content: url("crg.actividad.pantalla.minimizar.min.svg");
+  background-image: none;
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-TimeNumber .exeQuextIcons-FullScreen {
+  content: url("crg.actividad.pantalla.completa.svg");
+  background-image: none;
+}
+
+.VQXTP-MainContainer .VQXTP-GameContainer .VQXTP-GameScoreBoard .VQXTP-TimeNumber a {
+  margin-right: 16px;
+}
+
+.DescubreQP-DataImage, .IDFP-DataImage, .ODNP-DataImage, SLCMP-DataImage {
+  content: url("exequextwonnew.png") !important;
+  width: 100%;
+  height: auto;
+}
+
+.ODNP-DataImage::before {
+  background: url(exequextwonnew.png) no-repeat !important;
+  content: url("exequextwonnew.png") !important;
+  width: 100%;
+  height: auto;
+}
+.SLCMP-GameOver .SLCMP-DataImage > img{
+  display:none !important;
+}
+
+.SLCMP-GameOver .SLCMP-DataImage::before {
+  content: url("exequextwonnew.png") !important;
+  width: 100%;
+  height: auto;
+}
+
+
+.DescubreQP-DataScore, .IDFP-DataScore , .ODNP-DataScore  {
+  width: 100%;
+  font-size: 1.5em;
+
+}
+
+.DescubreQP-DataScore p, , .IDFP-DataScore p ,  .ODNP-DataScore p {
+  display:inline-block;
+  position: relative;
+  line-height:0.5em !important;
+  font-weight: normal !important;
+  }
+
+.DescubreQP-StartGame a , .ODNP-StartGame a , .SLCMP-StartGameEnd a, .VQXTP-StartGame a {
+  display:inline-block;
+  background-color: #007bc4 !important;
+  border-radius: 8px;
+  padding: 6px 16px;
+  color: #ffffff !important;
+  font-size: 1.25em;  
+  text-decoration: none !important;
+  margin-top:-16px !important;
+}
+
+.DescubreQP-StartGame a:hover  , .ODNP-StartGame a:hover , .SLCMP-StartGameEnd a:hover, .VQXTP-StartGame a:hover{
+  background-color: #3f9cd2;
+}
+
+/* ----------------- END GAMES ---------------------*/ 
+/* ------------------ DUA --------------------------*/
+
+.UDLcontentIdevice-eng .iDeviceTitle,
+.UDLcontentIdevice-rep .iDeviceTitle,
+.UDLcontentIdevice-exp .iDeviceTitle{
+  border-radius: 8px 8px 0px 0px;
+  color: var(--dark-blue-color);
+}
+
+.iDevice_wrapper[class*="_question"]  .iDevice_inner  { 
+    border-color:var(--dua-exp-color); 
+}
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_eng_"] .iDevice_inner, .iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_eng_"].hidden-idevice .iDevice_inner { 
+    border-color:var(--dua-eng-color); 
+}
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_rep_"]  .iDevice_inner,  .iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_rep_"].hidden-idevice .iDevice_inner {  
+    border-color:var(--dua-rep-color); 
+}
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_exp_"] .iDevice_inner,  .iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_exp_"].hidden-idevice .iDevice_inner { 
+    border-color:var(--dua-exp-color); 
+}
+
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_eng_"] .toggle-idevice a{
+  background-image: url(crg.despliegue.verde.arriba.svg);
+}
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_rep_"] .toggle-idevice a{
+  background-image: url(crg.despliegue.malva.arriba.svg);
+}
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_exp_"] .toggle-idevice a{
+  background-image: url(crg.despliegue.azul2.arriba.svg);
+}
+
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_eng_"] > div > header{
+ border-color:var(--dua-eng-color); 
+}
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_rep_"] > div > header{
+ border-color:var(--dua-rep-color); 
+}
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_exp_"] > div > header{
+ border-color:var(--dua-exp-color); 
+}
+
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_eng_"]  .toggle-idevice a.show-idevice{
+  background-image: url(crg.despliegue.verde.abajo.svg);
+  border-color:var(--dua-eng-color);
+}
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_rep_"]  .toggle-idevice a.show-idevice{
+  background-image: url(crg.despliegue.malva.abajo.svg);
+  border-color:var(--dua-rep-color);
+}
+.iDevice_wrapper:not(.UDLcontentIdevice)[class*="_udl_exp_"]  .toggle-idevice a.show-idevice{
+  background-image: url(crg.despliegue.azul2.abajo.svg);
+ border-color:var(--dua-exp-color);
+}
+
+.UDLcontentIdevice-eng .toggle-idevice a{
+  background-image: url(crg.despliegue.verde.arriba.svg);
+}
+
+.UDLcontentIdevice-rep .toggle-idevice a{
+  background-image: url(crg.despliegue.malva.arriba.svg);
+}
+
+.UDLcontentIdevice-exp .toggle-idevice a{
+  background-image: url(crg.despliegue.azul2.arriba.svg);
+}
+
+.UDLcontentIdevice-eng .toggle-idevice a.show-idevice{
+  background-image: url(crg.despliegue.verde.abajo.svg);
+}
+
+.UDLcontentIdevice-rep .toggle-idevice a.show-idevice{
+  background-image: url(crg.despliegue.malva.abajo.svg);
+}
+
+.UDLcontentIdevice-exp .toggle-idevice a.show-idevice{
+  background-image: url(crg.despliegue.azul2.abajo.svg);
+}
+
+.UDLcontentIdevice-eng .iDevice_inner,
+.UDLcontentIdevice-eng.hidden-idevice .iDevice_header{
+  border-color: var(--dua-eng-color)
+}
+
+.UDLcontentIdevice-rep .iDevice_inner,
+.UDLcontentIdevice-rep.hidden-idevice .iDevice_header{
+  border-color: var(--dua-rep-color)
+}
+
+.UDLcontentIdevice-exp .iDevice_inner,
+.UDLcontentIdevice-exp.hidden-idevice .iDevice_header{
+  border-color: var(--dua-exp-color)
+}
+
+.exe-udlContent .exe-udlContent-alt-lnk {
+  width: 48px;
+  height: 48px;
+}
+
+.exe-udlContent .exe-udlContent-alt-lnk-simplified {
+  background-image: url(button_C25.svg) !important;
+  background-position: unset;
+}
+
+.exe-udlContent .exe-udlContent-alt-lnk-audio {
+  background-image: url(button_C24.svg) !important;
+  background-position: unset;
+}
+
+.exe-udlContent .exe-udlContent-alt-lnk-visual {
+  background-image: url(button_C23.svg) !important;
+  background-position: unset;
+}
+
+@media screen and (min-width: 1px) {
+  .exe-udlContent .exe-udlContent-alt-lnk-close {
+    background-image: url(crg.x.svg) !important;
+    background-size: unset;
+  }
+}
+
+.exe-udlContent-alt-bottom .exe-udlContent-content-nav {
+  height: 48px;
+}
+
+.exe-udlContent-alt-bottom .exe-udlContent-content-nav li {
+  height: 48px;
+}
+
+.exe-udlContent-content-block p .exe-dialog-link {
+  color: #007BC4;
+  text-decoration: underline;
+}
+
+.exe-udlContent-content-block p .exe-tooltip {
+  color: #002B4A;
+  text-decoration: underline;
+  border-bottom: none;
+}
+
+.exe-udlContent .exe-udlContent-content-simplified{
+  background-color: #E5F2F9;
+  border: 1px solid #80BDE1 !important;
+  padding: 16px;
+}
+
+.exe-udlContent .exe-udlContent-content-simplified .exe-udlContent-alt-content-title{
+  font-size: 1.2rem;
+  border-bottom: 1px solid #80BDE1;
+}
+
+.exe-udlContent .exe-udlContent-content-simplified .exe-udlContent-alt-content-title h2{
+  margin: 16px 0px;
+  color: #002B4A;
+}
+
+.exe-udlContent .exe-udlContent-content-visual{
+  background-color: #E5F2F9;
+  border: 1px solid #80BDE1 !important;
+  padding: 16px;
+}
+
+.exe-udlContent .exe-udlContent-content-visual .exe-udlContent-alt-content-title{
+  font-size: 1.2rem;
+  border-bottom: 1px solid #80BDE1;
+}
+
+.exe-udlContent .exe-udlContent-content-visual .exe-udlContent-alt-content-title h2{
+  margin: 16px 0px;
+  color: #002B4A;
+}
+
+.exe-udlContent .exe-udlContent-content-audio{
+  background-color: #E5F2F9;
+  border: 1px solid #80BDE1 !important;
+  padding: 16px;
+}
+
+.exe-udlContent .exe-udlContent-content-audio .exe-udlContent-alt-content-title{
+  font-size: 1.2rem;
+  border-bottom: 1px solid #80BDE1;
+}
+
+.exe-udlContent .exe-udlContent-content-audio .exe-udlContent-alt-content-title h2{
+  margin: 16px 0px;
+  color: #002B4A;
+}
+
+.exe-udlContent-engagement .udl-btn,
+.exe-udlContent-representation .udl-btn,
+.exe-udlContent-expression .udl-btn{
+  border-radius: 8px;
+  color: var(--dark-blue-color) !important;
+  text-decoration: none !important;
+}
+
+.exe-udlContent-engagement .udl-btn{
+  background-color: var(--dua-eng-color) !important;
+}
+.exe-udlContent-representation .udl-btn{
+  background-color: var(--dua-rep-color) !important;
+}
+.exe-udlContent-expression .udl-btn{
+  background-color: var(--dua-exp-color) !important;
+}
+.udl-character span{
+  font-size: 1.1rem;
+  color: var(--dark-blue-color);
+  font-family: "Atkinson Bold";
+  opacity: unset !important;
+  transition: unset !important;
+}
+
+.exe-udlContent .udl-character:before{content:" ";float:left;display:block;height:125px;width:125px;background:url(Personaxe1-small.png) no-repeat 0 0  !important;;background-size:125px auto;border-radius:10px}
+.exe-udlContent .udl-character-2:before{background-image:url(Personaxe2-small.png)  !important;}
+.exe-udlContent .udl-character-3:before{background-image:url(Personaxe3-small.png)  !important;}
+.exe-udlContent .udl-character-4:before{background-image:url(Personaxe4-small.png)  !important;}
+
+.exe-udlContent-content li{
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+}
+.exe-udlContent-content table {
+font-size: 1.0em;
+}
+.exe-udlContent-content table th {
+font-size: 1.1em;
+}
+
+/* ----------- END DUA -----------------------------*/
+
+.ficheiros li {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  background-image: url(anexo.svg);
+  background-repeat: no-repeat;
+  background-size: 36px 46px;
+  margin-top:10px;
+  padding:10px 10px 10px 44px;  
+}
+
+@media screen and (min-width: 1px){
+  .exe-udlContent .udl-character:hover span,
+  .exe-udlContent .udl-character:focus span {
+    font-size: 1.1rem !important;
+  }
+}
+@media all and (max-width: 768px) {
+  .exe-scorm #outer,
+  .exe-authoring-page #outer {
+    width: 100%;
+    border: none;
+    margin: 0;
+  }
+
+}
+@media print{
+
+	.exe-udlContent-block-toggler .udl-character:before{display:block   !important;}	
+	.udl-character-img{width:125px;left:auto   !important;top:auto   !important;clip:inherit  !important; }
+
+
+}

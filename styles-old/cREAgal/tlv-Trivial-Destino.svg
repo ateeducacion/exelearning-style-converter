@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #007bc4;
+      }
+    </style>
+  </defs>
+  <g id="Diana_Adaptada" data-name="Diana Adaptada">
+    <g id="Grupo_1115" data-name="Grupo 1115">
+      <circle id="Elipse_29-2" data-name="Elipse 29-2" class="cls-2" cx="32" cy="32" r="32"/>
+      <circle id="Elipse_30-2" data-name="Elipse 30-2" class="cls-1" cx="32" cy="32" r="24"/>
+      <circle id="Elipse_31-2" data-name="Elipse 31-2" class="cls-2" cx="32" cy="32" r="19"/>
+      <circle id="Elipse_32-2" data-name="Elipse 32-2" class="cls-1" cx="32" cy="32" r="12"/>
+      <circle id="Elipse_33-2" data-name="Elipse 33-2" class="cls-2" cx="32" cy="32" r="7"/>
+    </g>
+  </g>
+</svg>

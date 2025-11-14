@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Capa_6"
+   data-name="Capa 6"
+   viewBox="0 0 48 48"
+   version="1.1"
+   sodipodi:docname="anexo.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview11"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="17.895833"
+     inkscape:cx="16.596042"
+     inkscape:cy="24.055879"
+     inkscape:window-width="1920"
+     inkscape:window-height="1025"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Capa_6" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">
+      .cls-1 {
+        fill: #002b4a;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #d6acff;
+      }
+    </style>
+  </defs>
+  <rect
+     class="cls-2"
+     x="3.33"
+     y="3.33"
+     width="41.33"
+     height="41.33"
+     rx="5.17"
+     ry="5.17"
+     id="rect6"
+     style="stroke:#002b4a;stroke-opacity:1;stroke-width:1;stroke-dasharray:none;fill:#ffffff;fill-opacity:1" />
+  <path
+     class="cls-1"
+     d="M24.19,37.06c-2.74,0-4.98-2.23-4.98-4.98V14.13c0-.37.3-.67.67-.67s.67.3.67.67v17.96c0,2.01,1.63,3.64,3.64,3.64s3.64-1.63,3.64-3.64V14.13c0-1.22-.99-2.21-2.21-2.21s-2.21.99-2.21,2.21v16.52c0,.42.35.77.77.77s.77-.35.77-.77v-14.19c0-.37.3-.67.67-.67s.67.3.67.67v14.19c0,1.16-.94,2.1-2.1,2.1s-2.1-.94-2.1-2.1V14.13c0-1.95,1.59-3.54,3.54-3.54s3.54,1.59,3.54,3.54v17.96c0,2.74-2.23,4.98-4.98,4.98Z"
+     id="path8" />
+</svg>

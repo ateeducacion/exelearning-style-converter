@@ -1,0 +1,12 @@
+<svg id="Grupo_722" data-name="Grupo 722" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_394" data-name="Rectángulo 394" width="48" height="48" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_721" data-name="Grupo 721" clip-path="url(#clip-path)">
+    <path id="Trazado_332" data-name="Trazado 332" d="M48,6V42a6,6,0,0,1-6,6H6a6,6,0,0,1-6-6V6A6,6,0,0,1,6,0H42a6,6,0,0,1,6,6" fill="#007bc4"/>
+    <path id="Trazado_333" data-name="Trazado 333" d="M41.657,28.451s-6.332,7.285-14.143,7.285-14.143-7.285-14.143-7.285,6.332-7.285,14.143-7.285S41.657,28.451,41.657,28.451Z" transform="translate(-3.343 -5.291)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <circle id="Elipse_1" data-name="Elipse 1" cx="6" cy="6" r="6" transform="translate(18.171 17.159)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>
