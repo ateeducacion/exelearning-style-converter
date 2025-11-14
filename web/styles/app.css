@@ -1,0 +1,137 @@
+/* eXeLearning Style Converter - Custom Styles */
+
+/* Console Output Styles */
+#console-output {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 14px;
+    padding: 20px;
+    height: 500px;
+    overflow-y: auto;
+    border-radius: 0;
+    line-height: 1.6;
+}
+
+.console-line {
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.console-timestamp {
+    color: #858585;
+    font-weight: normal;
+}
+
+.console-content {
+    color: #d4d4d4;
+}
+
+/* Console Type Colors */
+.console-info .console-content {
+    color: #4fc3f7;
+}
+
+.console-success .console-content {
+    color: #81c784;
+    font-weight: 500;
+}
+
+.console-warning .console-content {
+    color: #ffb74d;
+}
+
+.console-error .console-content {
+    color: #e57373;
+    font-weight: 500;
+}
+
+.console-separator {
+    color: #858585;
+    margin: 8px 0;
+}
+
+/* Console Scrollbar (Webkit) */
+#console-output::-webkit-scrollbar {
+    width: 10px;
+}
+
+#console-output::-webkit-scrollbar-track {
+    background: #2d2d30;
+}
+
+#console-output::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+}
+
+#console-output::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Body */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Cards */
+.card {
+    border: none;
+}
+
+/* File input styling */
+#dirInput {
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Button hover effects */
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+}
+
+.btn-success {
+    transition: all 0.2s ease;
+}
+
+/* Loading spinner overlay */
+#loadingSpinner {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    #console-output {
+        height: 400px;
+    }
+}
+
+@media (max-width: 576px) {
+    #console-output {
+        height: 300px;
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    h1.display-5 {
+        font-size: 1.75rem;
+    }
+}

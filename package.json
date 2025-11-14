@@ -1,0 +1,40 @@
+{
+  "name": "exelearning-style-converter",
+  "version": "1.0.0",
+  "description": "Automated tool to convert eXeLearning styles from v2.9 to v3.0",
+  "main": "cli.js",
+  "type": "module",
+  "bin": {
+    "convert-exe-style": "./cli.js"
+  },
+  "scripts": {
+    "start": "node cli.js",
+    "test": "node cli.js --input styles-old/garden --dry-run",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "exelearning",
+    "converter",
+    "migration",
+    "education"
+  ],
+  "author": "Ernesto",
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "file-saver": "^2.0.5",
+    "fs-extra": "^11.2.0",
+    "jszip": "^3.10.1",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
