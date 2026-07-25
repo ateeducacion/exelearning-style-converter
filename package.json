@@ -23,7 +23,7 @@
   "author": "Ernesto",
   "license": "MIT",
   "dependencies": {
-    "archiver": "^7.0.1",
+    "archiver": "^8.0.0",
     "chalk": "^5.3.0",
     "commander": "^12.0.0",
     "file-saver": "^2.0.5",
